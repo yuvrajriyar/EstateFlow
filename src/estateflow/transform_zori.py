@@ -59,3 +59,8 @@ zori_long = zori_long.rename(
     }
 )
 print(f"Final columns: {zori_long.columns.tolist()}")
+
+output_path = Path("data/processed/zori_zip_month.csv")
+zori_long.to_csv(output_path, index=False)
+
+print(f"Saved {len(zori_long):,} rows to {output_path}")
