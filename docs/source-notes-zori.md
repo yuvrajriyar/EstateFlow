@@ -19,7 +19,7 @@ The All Homes dataset covers single-family residences, condominiums and multi-fa
 
 Each row represents one ZIP code. The first nine columns identify the location, followed by 139 monthly rent columns.
 
-The file is in wide format because each month appears as a separate column. EstateFlow will eventually reshape it into long format, where each row represents one ZIP code during one month.
+The file is in wide format because each month appears as a separate column. EstateFlow reshapes it into long format, where each row represents one ZIP code during one month.
 
 ## Geographic fields
 

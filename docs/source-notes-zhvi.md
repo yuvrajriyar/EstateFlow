@@ -17,7 +17,7 @@ ZHVI is Zillow’s estimate of the typical home value within a geographic market
 
 Each row represents one ZIP code. The first nine columns identify the location. The remaining 319 columns contain monthly home values.
 
-The file is in wide format because every month has a separate column. EstateFlow will eventually reshape it into long format, where each row represents one ZIP code during one month.
+The file is in wide format because every month has a separate column. EstateFlow reshapes it into long format, where each row represents one ZIP code during one month.
 
 ## Geographic fields
 
