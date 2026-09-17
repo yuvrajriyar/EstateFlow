@@ -2,18 +2,73 @@ CREATE SCHEMA IF NOT EXISTS marts;
 
 CREATE OR REPLACE VIEW marts.zip_month_market_metrics AS
 SELECT
-    region_id,
-    size_rank,
-    zip_code,
-    region_type,
-    state,
-    city,
-    metro,
-    county_name,
-    month,
-    zhvi_usd,
-    zori_usd,
-    zori_usd * 12 AS annualised_rent_usd,
-    (zori_usd * 12 / zhvi_usd) * 100
-        AS gross_rent_to_value_pct
-FROM intermediate.zip_month_housing;
+    current_data.region_id,
+    current_data.size_rank,
+    current_data.zip_code,
+    current_data.region_type,
+    current_data.state,
+    current_data.city,
+    current_data.metro,
+    current_data.county_name,
+    current_data.month,
+    current_data.zhvi_usd,
+    current_data.zori_usd,
+
+    current_data.zori_usd * 12
+        AS annualised_rent_usd,
+
+    (current_data.zori_usd * 12 / current_data.zhvi_usd) * 100
+        AS gross_rent_to_value_pct,
+
+    previous_data.zhvi_usd
+        AS previous_year_zhvi_usd,
+
+    previous_data.zori_usd
+        AS previous_year_zori_usd,
+
+    (
+        (current_data.zhvi_usd - previous_data.zhvi_usd)
+        / previous_data.zhvi_usd
+    ) * 100 AS home_value_yoy_pct,
+
+    (
+        (current_data.zori_usd - previous_data.zori_usd)
+        / previous_data.zori_usd
+    ) * 100 AS rent_yoy_pct,
+
+    previous_data.zip_code IS NOT NULL
+        AS has_yoy_comparison
+
+FROM intermediate.zip_month_housing AS current_data
+
+LEFT JOIN intermediate.zip_month_housing AS previous_data
+    ON current_data.zip_code = previous_data.zip_code
+    AND previous_data.month = (
+        DATE_TRUNC('month', current_data.month)
+        - INTERVAL '1 year'
+        + INTERVAL '1 month'
+        - INTERVAL '1 day'
+    )::date;
+
+    -- The availability flag must agree with the YoY fields
+SELECT
+    COUNT(*) AS inconsistent_yoy_flags
+FROM marts.zip_month_market_metrics
+WHERE (
+    has_yoy_comparison
+    AND (
+        previous_year_zhvi_usd IS NULL
+        OR previous_year_zori_usd IS NULL
+        OR home_value_yoy_pct IS NULL
+        OR rent_yoy_pct IS NULL
+    )
+)
+OR (
+    NOT has_yoy_comparison
+    AND (
+        previous_year_zhvi_usd IS NOT NULL
+        OR previous_year_zori_usd IS NOT NULL
+        OR home_value_yoy_pct IS NOT NULL
+        OR rent_yoy_pct IS NOT NULL
+    )
+);
