@@ -49,5 +49,3 @@ LEFT JOIN intermediate.zip_month_housing AS previous_data
         + INTERVAL '1 month'
         - INTERVAL '1 day'
     )::date;
-
-  
