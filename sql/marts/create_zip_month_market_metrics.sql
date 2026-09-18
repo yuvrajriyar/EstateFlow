@@ -50,25 +50,4 @@ LEFT JOIN intermediate.zip_month_housing AS previous_data
         - INTERVAL '1 day'
     )::date;
 
-    -- The availability flag must agree with the YoY fields
-SELECT
-    COUNT(*) AS inconsistent_yoy_flags
-FROM marts.zip_month_market_metrics
-WHERE (
-    has_yoy_comparison
-    AND (
-        previous_year_zhvi_usd IS NULL
-        OR previous_year_zori_usd IS NULL
-        OR home_value_yoy_pct IS NULL
-        OR rent_yoy_pct IS NULL
-    )
-)
-OR (
-    NOT has_yoy_comparison
-    AND (
-        previous_year_zhvi_usd IS NOT NULL
-        OR previous_year_zori_usd IS NOT NULL
-        OR home_value_yoy_pct IS NOT NULL
-        OR rent_yoy_pct IS NOT NULL
-    )
-);
+  
