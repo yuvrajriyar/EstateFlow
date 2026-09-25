@@ -21,6 +21,7 @@ TRANSFORM_SCRIPTS = [
 MODEL_SQL_FILES = [
     Path("sql/intermediate/create_zip_month_housing.sql"),
     Path("sql/marts/create_zip_month_market_metrics.sql"),
+    Path("sql/marts/create_latest_zip_market_metrics.sql"),
 ]
 
 QUALITY_SQL_FILES = [
@@ -28,6 +29,7 @@ QUALITY_SQL_FILES = [
     Path("sql/quality/check_zhvi.sql"),
     Path("sql/quality/check_zip_month_housing.sql"),
     Path("sql/quality/check_zip_month_market_metrics.sql"),
+    Path("sql/quality/check_latest_zip_market_metrics.sql"),
 ]
 
 
