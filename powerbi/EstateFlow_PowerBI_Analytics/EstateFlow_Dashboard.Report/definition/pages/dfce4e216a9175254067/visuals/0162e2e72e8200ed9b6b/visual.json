@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "0162e2e72e8200ed9b6b",
+  "position": {
+    "x": 1152,
+    "y": 175,
+    "z": 4,
+    "height": 170,
+    "width": 320,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Gross Rent-to-Value"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Gross Rent-to-Value",
+              "nativeQueryRef": "Median Gross Rent-to-Value"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Latest ZIP Market"
+                  }
+                },
+                "Property": "Median Gross Rent-to-Value"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

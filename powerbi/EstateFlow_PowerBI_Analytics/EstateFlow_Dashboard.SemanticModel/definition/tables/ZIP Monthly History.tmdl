@@ -1,0 +1,205 @@
+table 'ZIP Monthly History'
+	lineageTag: c4e42b5a-bf22-4bf4-a0b6-6ddcd13fc877
+
+	measure 'Median Home Value Trend' =
+			
+			MEDIAN('ZIP Monthly History'[zhvi_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Historical KPIs
+		lineageTag: 77bf0a79-8c90-4b81-b60b-cd31812160d8
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Median Rent Trend' =
+			
+			MEDIAN('ZIP Monthly History'[zori_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Historical KPIs
+		lineageTag: 323607b1-a4f6-4894-ad6d-3471ad78818e
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column region_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7df66dac-1104-4253-a2fd-224cee17b069
+		summarizeBy: none
+		sourceColumn: region_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column size_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 0377746d-d178-455b-988a-2eb25b67e573
+		summarizeBy: sum
+		sourceColumn: size_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code
+		dataType: string
+		lineageTag: 2346d0c2-27ef-4172-aef1-c457e9956bc4
+		summarizeBy: none
+		sourceColumn: zip_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_type
+		dataType: string
+		lineageTag: 80948032-f35d-42c9-87d5-1af021cd7dca
+		summarizeBy: none
+		sourceColumn: region_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 3f91d79e-9252-4b2c-bc94-432cdc0a4ea5
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 58f6596e-306c-41a1-806c-d2c1523a6cb2
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column metro
+		dataType: string
+		lineageTag: 5b4e7321-b2b0-4378-a559-8dc479ff5288
+		summarizeBy: none
+		sourceColumn: metro
+
+		annotation SummarizationSetBy = Automatic
+
+	column county_name
+		dataType: string
+		lineageTag: 829fd04f-ddf7-4032-b274-d1565312aa26
+		summarizeBy: none
+		sourceColumn: county_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ef91fef7-cb01-45cf-a983-c361a8892264
+		summarizeBy: none
+		sourceColumn: month
+
+		variation Variation
+			isDefault
+			relationship: 417d17b7-175c-4ffc-b7ba-f97856cba7d4
+			defaultHierarchy: LocalDateTable_5babfcfd-ffa5-4bb2-a0c1-30ac2e780b86.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column zhvi_usd
+		dataType: double
+		lineageTag: 42583abf-f2a9-4a2e-aced-0acd590ec43a
+		summarizeBy: sum
+		sourceColumn: zhvi_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column zori_usd
+		dataType: double
+		lineageTag: 70dab7ce-ffe1-47fa-b240-518b936d48eb
+		summarizeBy: sum
+		sourceColumn: zori_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column annualised_rent_usd
+		dataType: double
+		lineageTag: 5da20faa-8a80-46c2-b21a-795729227284
+		summarizeBy: sum
+		sourceColumn: annualised_rent_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gross_rent_to_value_pct
+		dataType: double
+		lineageTag: 5d84b39f-9f2d-4d66-85a9-43c6c3bd5a20
+		summarizeBy: sum
+		sourceColumn: gross_rent_to_value_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column previous_year_zhvi_usd
+		dataType: double
+		lineageTag: 93a7ff9f-8b93-451d-8660-9eb4309f40fc
+		summarizeBy: sum
+		sourceColumn: previous_year_zhvi_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column previous_year_zori_usd
+		dataType: double
+		lineageTag: 03117b9a-8641-40a5-980c-240e5d9e9a9a
+		summarizeBy: sum
+		sourceColumn: previous_year_zori_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column home_value_yoy_pct
+		dataType: double
+		lineageTag: 5b1b4ea5-c126-41c0-909e-9bfe45e77020
+		summarizeBy: sum
+		sourceColumn: home_value_yoy_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rent_yoy_pct
+		dataType: double
+		lineageTag: 9a9532b2-c7df-450b-ad06-7f2a962a7c19
+		summarizeBy: sum
+		sourceColumn: rent_yoy_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column has_yoy_comparison
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 708551df-5cd4-464d-9f5c-9cd2fd16d22b
+		summarizeBy: none
+		sourceColumn: has_yoy_comparison
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ZIP Monthly History' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "estateflow"),
+				  #"Navigation 1" = Source{[Schema = "marts", Item = "zip_month_market_metrics"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

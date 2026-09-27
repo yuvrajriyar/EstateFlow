@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e105f206a307b408c509",
+  "position": { "x": 930, "y": 702, "z": 4, "height": 322, "width": 942, "tabOrder": 4 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": { "general": [{ "properties": { "paragraphs": [
+      { "textRuns": [{ "value": "IMPORTANT CONTEXT", "textStyle": { "fontFamily": "Georgia", "fontSize": "18pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "This dashboard is a market-screening tool built from Zillow ZHVI and ZORI indices. It describes ZIP-level market conditions, not the economics of a specific property.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "Gross yield excludes vacancy, maintenance, property taxes, insurance, management, financing, transaction costs and renovation. Treat it as a first-pass comparison, not expected net return.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "Data availability varies by ZIP and month. Missing records are not estimated in the mart; YoY Coverage shows how much of the current market has a valid annual comparison.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "SOURCE  /  Zillow Research  •  LATEST JOINED MONTH  /  July 2026", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "9pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" }
+    ] } }] },
+    "visualContainerObjects": {
+      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#11110F'" } } } } }, "transparency": { "expr": { "Literal": { "Value": "0D" } } } } }],
+      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#34322D'" } } } } }, "width": { "expr": { "Literal": { "Value": "1D" } } }, "radius": { "expr": { "Literal": { "Value": "0D" } } } } }],
+      "padding": [{ "properties": { "top": { "expr": { "Literal": { "Value": "24D" } } }, "bottom": { "expr": { "Literal": { "Value": "24D" } } }, "left": { "expr": { "Literal": { "Value": "24D" } } }, "right": { "expr": { "Literal": { "Value": "24D" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,14 @@
+relationship 86eadc7d-c110-4282-9764-1d85a9c33969
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Latest ZIP Market'.month
+	toColumn: LocalDateTable_79873c00-418b-4492-bc92-efd3f63436d0.Date
+
+relationship 417d17b7-175c-4ffc-b7ba-f97856cba7d4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ZIP Monthly History'.month
+	toColumn: LocalDateTable_5babfcfd-ffa5-4bb2-a0c1-30ac2e780b86.Date
+
+relationship AutoDetected_e4904a25-daf6-4e87-bff5-b49f6e468ce9
+	fromColumn: 'ZIP Monthly History'.region_id
+	toColumn: 'Latest ZIP Market'.region_id
+

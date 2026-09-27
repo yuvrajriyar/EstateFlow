@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e102f203a304b405c506",
+  "position": { "x": 48, "y": 170, "z": 1, "height": 348, "width": 850, "tabOrder": 1 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": { "general": [{ "properties": { "paragraphs": [
+      { "textRuns": [{ "value": "THE READING ORDER", "textStyle": { "fontFamily": "Georgia", "fontSize": "18pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "01  CHOOSE A LOCATION", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "Use State, Metro and City to narrow every figure on the page. Leave them on All for the national view.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "02  READ THE HEADLINE CARDS", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "These summarise the typical market using medians, which reduce the influence of unusually expensive or cheap ZIP codes.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "03  FOLLOW THE TRAJECTORY", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "The gold line is median home value on the left axis. The ivory line is median monthly rent on the right axis.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "04  INSPECT OPPORTUNITIES", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "The table ranks ZIP codes by gross yield. Use it to create a shortlist, then investigate the local market further.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "05  COMPARE MARKETS", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "On Market Explorer, look for states positioned higher and farther right, then use rent momentum and the metro table to test whether the opportunity is balanced.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
+    ] } }] },
+    "visualContainerObjects": {
+      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#11110F'" } } } } }, "transparency": { "expr": { "Literal": { "Value": "0D" } } } } }],
+      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#34322D'" } } } } }, "width": { "expr": { "Literal": { "Value": "1D" } } }, "radius": { "expr": { "Literal": { "Value": "0D" } } } } }],
+      "padding": [{ "properties": { "top": { "expr": { "Literal": { "Value": "24D" } } }, "bottom": { "expr": { "Literal": { "Value": "24D" } } }, "left": { "expr": { "Literal": { "Value": "24D" } } }, "right": { "expr": { "Literal": { "Value": "24D" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

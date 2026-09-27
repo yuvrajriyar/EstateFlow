@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e103f204a305b406c507",
+  "position": { "x": 930, "y": 170, "z": 2, "height": 500, "width": 942, "tabOrder": 2 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": { "general": [{ "properties": { "paragraphs": [
+      { "textRuns": [{ "value": "WHAT THE METRICS MEAN", "textStyle": { "fontFamily": "Georgia", "fontSize": "18pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "MEDIAN HOME VALUE", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  The midpoint Zillow Home Value Index. Half of the included ZIP codes are above it and half are below it.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "MEDIAN MONTHLY RENT", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  The midpoint Zillow Observed Rent Index for the selected market.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "GROSS YIELD", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  Annualised rent divided by home value. A higher figure suggests more rent relative to purchase value, but it is not the same as profit or cash flow.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "HOME VALUE YOY", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  Percentage change in home value from the same month one year earlier. Positive means appreciation; negative means decline.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "RENT YOY", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  Percentage change in rent from the same month one year earlier. Faster rent growth may support improving income potential.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "YOY COVERAGE", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  The share of current ZIP codes with a valid comparison one year earlier. Lower coverage means growth summaries represent a smaller subset.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "LATEST DATA MONTH", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }, { "value": "  The newest month available in the joined housing dataset.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
+    ] } }] },
+    "visualContainerObjects": {
+      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#11110F'" } } } } }, "transparency": { "expr": { "Literal": { "Value": "0D" } } } } }],
+      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#34322D'" } } } } }, "width": { "expr": { "Literal": { "Value": "1D" } } }, "radius": { "expr": { "Literal": { "Value": "0D" } } } } }],
+      "padding": [{ "properties": { "top": { "expr": { "Literal": { "Value": "24D" } } }, "bottom": { "expr": { "Literal": { "Value": "24D" } } }, "left": { "expr": { "Literal": { "Value": "24D" } } }, "right": { "expr": { "Literal": { "Value": "24D" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "EstateFlow_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "72d892c5-7811-4472-b971-69605755be8e"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "1fdab8cc514b6ce03000",
+  "position": {
+    "x": 784,
+    "y": 175,
+    "z": 2,
+    "height": 170,
+    "width": 320,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Monthly Rent"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Monthly Rent",
+              "nativeQueryRef": "Median Monthly Rent"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Latest ZIP Market"
+                  }
+                },
+                "Property": "Median Monthly Rent"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Latest ZIP Market.Median Monthly Rent"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

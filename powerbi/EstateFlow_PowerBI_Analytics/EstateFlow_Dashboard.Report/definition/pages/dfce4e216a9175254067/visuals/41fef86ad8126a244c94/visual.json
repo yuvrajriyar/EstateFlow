@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "41fef86ad8126a244c94",
+  "position": {
+    "x": 48,
+    "y": 24,
+    "z": 5,
+    "height": 120,
+    "width": 980,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ESTATEFLOW  /  MARKET INTELLIGENCE",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "11pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "National Housing Market",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "30pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "ZIP-level home values, rents, yields and year-over-year movement",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#AAA49A"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": { "expr": { "Literal": { "Value": "0D" } } },
+            "bottom": { "expr": { "Literal": { "Value": "0D" } } },
+            "left": { "expr": { "Literal": { "Value": "0D" } } },
+            "right": { "expr": { "Literal": { "Value": "0D" } } }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

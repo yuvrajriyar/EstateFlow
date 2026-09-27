@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Latest ZIP Market","ZIP Monthly History"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Latest ZIP Market'
+ref table DateTableTemplate_e8a805eb-2418-4ace-859a-4907e7452ab3
+ref table LocalDateTable_79873c00-418b-4492-bc92-efd3f63436d0
+ref table 'ZIP Monthly History'
+ref table LocalDateTable_5babfcfd-ffa5-4bb2-a0c1-30ac2e780b86
+
+ref cultureInfo en-US
+
