@@ -106,7 +106,7 @@ Gross rent-to-value is a first-pass screening measure. It is not net yield, cash
 ## Repository map
 
 ```text
-docs/                       Source notes, data documentation, dashboard images
+docs/                       Source notes and data documentation
 powerbi/                    Editable Power BI Project and dashboard blueprint
 sql/staging/                Typed source tables
 sql/intermediate/           Joined ZIP-month model
