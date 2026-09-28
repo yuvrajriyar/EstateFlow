@@ -6,6 +6,20 @@ EstateFlow is a housing-market analytics project that takes Zillow home-value an
 
 The report has three pages: a national housing-market overview, a state and metro market explorer, and a plain-English guide to reading the measures. The editable Power BI Project is included in this repository under `powerbi/EstateFlow_PowerBI_Analytics`.
 
+## Dashboard previews
+
+### National housing market
+
+![EstateFlow national housing-market dashboard](docs/images/estateflow-national-market.png)
+
+### Market explorer
+
+![EstateFlow market explorer comparing state growth, gross yield, rent momentum, and metro markets](docs/images/estateflow-market-explorer.png)
+
+### How to read the dashboard
+
+![EstateFlow guide to reading dashboard metrics and their limitations](docs/images/estateflow-dashboard-guide.png)
+
 ## What it helps answer
 
 - How do typical home values and rents compare across ZIP codes and over time?
@@ -106,7 +120,7 @@ Gross rent-to-value is a first-pass screening measure. It is not net yield, cash
 ## Repository map
 
 ```text
-docs/                       Source notes and data documentation
+docs/                       Source notes, data documentation, dashboard images
 powerbi/                    Editable Power BI Project and dashboard blueprint
 sql/staging/                Typed source tables
 sql/intermediate/           Joined ZIP-month model
