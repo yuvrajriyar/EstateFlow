@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "fc100008000800080008",
+  "position": { "x": 48, "y": 635, "z": 7, "height": 337, "width": 1824, "tabOrder": 7 },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": { "Values": { "projections": [
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "ZIP Code" } }, "queryRef": "ZIP Forecasts.ZIP Code", "nativeQueryRef": "ZIP Code" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "City" } }, "queryRef": "ZIP Forecasts.City", "nativeQueryRef": "City" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Index" } }, "queryRef": "ZIP Forecasts.Index", "nativeQueryRef": "Index" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "As-Of Month" } }, "queryRef": "ZIP Forecasts.As-Of Month", "nativeQueryRef": "As-Of Month" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Forecast Month" } }, "queryRef": "ZIP Forecasts.Forecast Month", "nativeQueryRef": "Forecast Month" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Horizon (months)" } }, "queryRef": "ZIP Forecasts.Horizon (months)", "nativeQueryRef": "Horizon (months)" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Projection" } }, "queryRef": "ZIP Forecasts.Projection", "nativeQueryRef": "Projection" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "80% Lower" } }, "queryRef": "ZIP Forecasts.80% Lower", "nativeQueryRef": "80% Lower" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "80% Upper" } }, "queryRef": "ZIP Forecasts.80% Upper", "nativeQueryRef": "80% Upper" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "95% Lower" } }, "queryRef": "ZIP Forecasts.95% Lower", "nativeQueryRef": "95% Lower" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "95% Upper" } }, "queryRef": "ZIP Forecasts.95% Upper", "nativeQueryRef": "95% Upper" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Method" } }, "queryRef": "ZIP Forecasts.Method", "nativeQueryRef": "Method" }
+      ] } },
+      "sortDefinition": { "sort": [
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "ZIP Code" } }, "direction": "Ascending" },
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Forecast Month" } }, "direction": "Ascending" }
+      ], "isDefaultSort": true }
+    },
+    "objects": {
+      "columnHeaders": [{ "properties": { "autoSizeColumnWidth": { "expr": { "Literal": { "Value": "true" } } }, "fontSize": { "expr": { "Literal": { "Value": "10D" } } }, "bold": { "expr": { "Literal": { "Value": "true" } } } } }],
+      "values": [{ "properties": {
+        "fontSize": { "expr": { "Literal": { "Value": "10D" } } },
+        "backColorPrimary": { "solid": { "color": { "expr": { "Literal": { "Value": "'#11110F'" } } } } },
+        "backColorSecondary": { "solid": { "color": { "expr": { "Literal": { "Value": "'#151410'" } } } } },
+        "fontColorPrimary": { "solid": { "color": { "expr": { "Literal": { "Value": "'#F3EEE4'" } } } } },
+        "fontColorSecondary": { "solid": { "color": { "expr": { "Literal": { "Value": "'#F3EEE4'" } } } } }
+      } }]
+    },
+    "visualContainerObjects": { "title": [{ "properties": {
+      "show": { "expr": { "Literal": { "Value": "true" } } },
+      "text": { "expr": { "Literal": { "Value": "'FORECAST RECORDS  /  INDEX ESTIMATES & EMPIRICAL BOUNDS'" } } },
+      "fontSize": { "expr": { "Literal": { "Value": "15D" } } }
+    } }] },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "fc100003000300030003",
+  "position": { "x": 1140, "y": 48, "z": 2, "height": 80, "width": 200, "tabOrder": 2 },
+  "visual": {
+    "visualType": "slicer",
+    "query": { "queryState": { "Values": { "projections": [
+      { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "State" } }, "queryRef": "ZIP Forecasts.State", "nativeQueryRef": "State" }
+    ] } } },
+    "objects": {
+      "data": [{ "properties": { "mode": { "expr": { "Literal": { "Value": "'Dropdown'" } } } } }],
+      "header": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "text": { "expr": { "Literal": { "Value": "'STATE'" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

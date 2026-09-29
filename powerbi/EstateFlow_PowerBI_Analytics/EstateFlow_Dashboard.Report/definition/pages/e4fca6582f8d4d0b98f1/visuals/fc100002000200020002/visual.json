@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "fc100002000200020002",
+  "position": { "x": 48, "y": 147, "z": 1, "height": 72, "width": 1824, "tabOrder": 1 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": { "general": [{ "properties": { "paragraphs": [
+      { "textRuns": [{ "value": "Select one ZIP to see its projected path. Browse the table for every eligible ZIP. The 80% lines are empirical bounds; 95% bounds appear in the table.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "12pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "Forecasts begin after the observed as-of month. A flat line is a deliberate baseline, not a missing calculation.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "11pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
+    ] } }] },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -4,7 +4,7 @@ EstateFlow is a housing-market analytics project that takes Zillow home-value an
 
 ## Dashboard structure
 
-The report has three pages: a national housing-market overview, a state and metro market explorer, and a plain-English guide to reading the measures. The editable Power BI Project is included in this repository under `powerbi/EstateFlow_PowerBI_Analytics`.
+The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains three established observed-data pages: a national housing-market overview, a state and metro market explorer, and a plain-English guide. A fourth, separately labelled forecast experiment page is authored and awaits a PostgreSQL publish, Power BI refresh, and Desktop review.
 
 ## Dashboard previews
 
@@ -26,6 +26,7 @@ The report has three pages: a national housing-market overview, a state and metr
 - Where do home-value growth, rent growth, and gross rent-to-value diverge?
 - Which ZIP codes are worth a closer look after filtering by state, metro, or city?
 - How much of the current market has a valid year-over-year comparison?
+- For eligible ZIPs, what do a simple baseline and validated trend model project at 3, 6 and 12 months, and how wide were their historically calibrated prediction bands?
 
 The dashboard's latest shared Zillow observation is **July 2026**. In that snapshot, the joined model covers **8,499 ZIP codes**. The national medians shown are **$389,083** for home value, **$1,818** for monthly rent, and **5.59%** gross rent-to-value. These are descriptive market measures, not property-level investment returns.
 
@@ -62,7 +63,15 @@ flowchart LR
 - **National Housing Market:** state, metro, and city filters; headline market medians; home-value and rent history; year-over-year indicators; coverage; and a ZIP-level market-opportunities table.
 - **Market Explorer:** state and metro filters; a growth-versus-yield state comparison; rent-momentum ranking; and a metro comparison table.
 - **How to Read the Dashboard:** explains the measures, suggests a practical reading order, and makes the coverage and investment-screening limitations explicit.
+- **Forecast Experiment:** ZIP-level home-value and rent-index projections and empirical 80%/95% bounds, explicitly separated from the observed pages; pending Power BI Desktop validation.
 - The editable Power BI Project (`.pbip`) and semantic-model/report definitions are in [`powerbi/EstateFlow_PowerBI_Analytics`](powerbi/EstateFlow_PowerBI_Analytics). Local Power BI cache and settings are intentionally excluded.
+
+### Experimental forecasts
+
+- A separate, reproducible ZIP-index forecast experiment compares an unchanged-last-value benchmark with a damped log trend at 3-, 6-, and 12-month horizons.
+- It uses chronological selection, validation, calibration, and final-evaluation periods and reports empirical prediction-interval coverage. On the July 2026 snapshot, only the 12-month rent trend cleared the material-improvement threshold; home-value projections and shorter-horizon rent projections use the flat benchmark.
+- A separate **Forecast Experiment** Power BI page and import table are authored. Run the explicit database publish step and verify the page in Power BI Desktop before relying on it. A forecast is not an observed Zillow value, a property valuation, or net rental income. See the [forecast methodology and measured results](docs/forecast-methodology.md).
+- A September 2026 Zillow source-vintage check added August observations, but no July-origin 3-, 6- or 12-month projection has yet reached its target. The check documented material revisions to July values without updating the committed July snapshot or the observed dashboard.
 
 ## Analytical model
 
@@ -117,6 +126,22 @@ Gross rent-to-value is a first-pass screening measure. It is not net yield, cash
 
 4. Open `powerbi/EstateFlow_PowerBI_Analytics/EstateFlow_Dashboard.pbip` in Power BI Desktop. The model expects the PostgreSQL service at `localhost:5432` and database `estateflow`; configure the local PostgreSQL credentials when prompted, then refresh the model.
 
+To run the separate forecast experiment after the data pipeline:
+
+```bash
+uv run python src/estateflow/run_forecast.py
+uv run python -m unittest discover -s tests -v
+```
+
+The database command reads the joined ZIP-month view and writes ignored CSVs under `data/processed/forecasts/`. Use `--source raw` to reproduce the same experiment from the committed raw files without PostgreSQL. After reviewing `forecast_evaluation.csv`, publish the separate forecast table for Power BI:
+
+```bash
+uv run python src/estateflow/run_forecast.py --publish-to-db
+docker compose exec -T postgres psql -U estateflow_user -d estateflow -v ON_ERROR_STOP=1 -f - < sql/quality/check_zip_market_forecasts.sql
+```
+
+Then refresh the editable Power BI Project and review the **Forecast Experiment** page. The page is authored in the repo but still requires a Power BI Desktop render and interaction check. The established observed-data pipeline does not run forecasting automatically.
+
 ## Repository map
 
 ```text
@@ -133,7 +158,7 @@ tests/                      Automated project tests
 ## Next steps
 
 - Add a repeatable automated test run in CI.
-- Build and evaluate a statistically defensible forecast for home values and rents, with uncertainty intervals and clear back-testing.
+- Validate forecast results on a new Zillow release and verify the authored forecast page, filters and data refresh in Power BI Desktop.
 - Assess whether carefully selected FRED or Census measures improve the market context without overstating causal explanations.
 
 ## Sources
@@ -142,6 +167,7 @@ tests/                      Automated project tests
 - [ZHVI source notes](docs/source-notes-zhvi.md)
 - [ZORI source notes](docs/source-notes-zori.md)
 - [Power BI dashboard blueprint](powerbi/dashboard-blueprint.md)
+- [Forecast experiment and limitations](docs/forecast-methodology.md)
 
 ## Author
 

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "fc100009000900090009",
+  "position": { "x": 48, "y": 985, "z": 8, "height": 70, "width": 1824, "tabOrder": 8 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": { "general": [{ "properties": { "paragraphs": [
+      { "textRuns": [{ "value": "METHOD  /  24 complete observed months required. Flat baseline unless the damped trend materially improves earlier validation. Zillow indices describe typical markets, not individual properties.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "11pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
+      { "textRuns": [{ "value": "LIMITS  /  Empirical bounds are pooled across ZIPs, have no guaranteed coverage and are not confidence intervals. Annualised rent is gross run rate, not collected or net income. See methodology in the repository.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
+    ] } }] },
+    "drillFilterOtherVisuals": true
+  }
+}

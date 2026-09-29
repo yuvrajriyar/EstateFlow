@@ -1,0 +1,34 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "fc100007000700070007",
+  "position": { "x": 987, "y": 235, "z": 6, "height": 380, "width": 885, "tabOrder": 6 },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": { "projections": [
+          { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Forecast Month" } }, "queryRef": "ZIP Forecasts.Forecast Month", "nativeQueryRef": "Forecast Month", "active": true }
+        ] },
+        "Y": { "projections": [
+          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Rent Projection" } }, "queryRef": "ZIP Forecasts.Rent Projection", "nativeQueryRef": "Rent Projection" },
+          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Rent 80% Lower" } }, "queryRef": "ZIP Forecasts.Rent 80% Lower", "nativeQueryRef": "Rent 80% Lower" },
+          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Rent 80% Upper" } }, "queryRef": "ZIP Forecasts.Rent 80% Upper", "nativeQueryRef": "Rent 80% Upper" }
+        ] }
+      },
+      "sortDefinition": { "sort": [
+        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Forecast Month" } }, "direction": "Ascending" }
+      ], "isDefaultSort": true }
+    },
+    "objects": {
+      "categoryAxis": [{ "properties": { "axisType": { "expr": { "Literal": { "Value": "'Categorical'" } } } } }],
+      "valueAxis": [{ "properties": { "showAxisTitle": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "lineStyles": [{ "properties": { "strokeWidth": { "expr": { "Literal": { "Value": "2D" } } }, "showMarker": { "expr": { "Literal": { "Value": "true" } } } } }]
+    },
+    "visualContainerObjects": { "title": [{ "properties": {
+      "show": { "expr": { "Literal": { "Value": "true" } } },
+      "text": { "expr": { "Literal": { "Value": "'MONTHLY RENT INDEX  /  PROJECTION & 80% BOUNDS'" } } },
+      "fontSize": { "expr": { "Literal": { "Value": "15D" } } }
+    } }] },
+    "drillFilterOtherVisuals": true
+  }
+}

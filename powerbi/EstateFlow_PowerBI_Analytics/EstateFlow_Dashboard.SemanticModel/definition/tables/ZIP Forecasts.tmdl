@@ -1,0 +1,161 @@
+table 'ZIP Forecasts'
+	lineageTag: 5747d9a7-86e2-4d97-a989-3fe88c2e04df
+
+	measure 'Eligible ZIPs' = DISTINCTCOUNT('ZIP Forecasts'[ZIP Code])
+		formatString: #,0
+		lineageTag: a805f2c8-d331-4c69-a789-041b7f223acd
+
+	measure 'Forecast As-Of Month' = MAX('ZIP Forecasts'[As-Of Month])
+		formatString: mmmm yyyy
+		lineageTag: b90a161f-f776-4dbd-9648-3a9af09e4b53
+
+	measure 'Home Projection' =
+			IF(
+			    HASONEVALUE('ZIP Forecasts'[ZIP Code]),
+			    CALCULATE(SELECTEDVALUE('ZIP Forecasts'[Projection]), 'ZIP Forecasts'[Index] = "Home value index")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6a0f88c2-4472-46d1-8693-5c3f1ca47bd3
+
+	measure 'Home 80% Lower' =
+			IF(
+			    HASONEVALUE('ZIP Forecasts'[ZIP Code]),
+			    CALCULATE(SELECTEDVALUE('ZIP Forecasts'[80% Lower]), 'ZIP Forecasts'[Index] = "Home value index")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: bcf48dbe-6ced-42a6-b547-757bf6aa1a6c
+
+	measure 'Home 80% Upper' =
+			IF(
+			    HASONEVALUE('ZIP Forecasts'[ZIP Code]),
+			    CALCULATE(SELECTEDVALUE('ZIP Forecasts'[80% Upper]), 'ZIP Forecasts'[Index] = "Home value index")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f572662f-86d6-423a-a5f7-30350ec49073
+
+	measure 'Rent Projection' =
+			IF(
+			    HASONEVALUE('ZIP Forecasts'[ZIP Code]),
+			    CALCULATE(SELECTEDVALUE('ZIP Forecasts'[Projection]), 'ZIP Forecasts'[Index] = "Monthly rent index")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b407deaa-54b6-49d2-9323-a80692572b9b
+
+	measure 'Rent 80% Lower' =
+			IF(
+			    HASONEVALUE('ZIP Forecasts'[ZIP Code]),
+			    CALCULATE(SELECTEDVALUE('ZIP Forecasts'[80% Lower]), 'ZIP Forecasts'[Index] = "Monthly rent index")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8b32e219-e125-4bba-ae99-e1dfe1e1c7bd
+
+	measure 'Rent 80% Upper' =
+			IF(
+			    HASONEVALUE('ZIP Forecasts'[ZIP Code]),
+			    CALCULATE(SELECTEDVALUE('ZIP Forecasts'[80% Upper]), 'ZIP Forecasts'[Index] = "Monthly rent index")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3ce6ce58-0521-42ab-a026-b7a690c38261
+
+	column 'ZIP Code'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: zip_code
+		lineageTag: 81b96509-03a5-4a3b-b442-e1efce63bb3f
+
+	column State
+		dataType: string
+		summarizeBy: none
+		sourceColumn: state
+		lineageTag: b94304c1-6cd9-4d8f-9f3d-192f15c26bae
+
+	column City
+		dataType: string
+		summarizeBy: none
+		sourceColumn: city
+		lineageTag: bc153a4e-25c4-49b8-beb9-76c817c3e8fb
+
+	column Metro
+		dataType: string
+		summarizeBy: none
+		sourceColumn: metro
+		lineageTag: 35b02d8b-0844-49d4-a801-2391be959acd
+
+	column Index
+		dataType: string
+		summarizeBy: none
+		sourceColumn: index_name
+		lineageTag: e31ba339-d912-4adc-b1f7-58bcf6a57dce
+
+	column 'As-Of Month'
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: as_of_month
+		lineageTag: e6522b52-0c59-4878-803d-832c5e9c0802
+
+	column 'Forecast Month'
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: forecast_month
+		lineageTag: c878abfc-b02b-4805-b58c-c7fed30ca8b0
+
+	column 'Horizon (months)'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: horizon_months
+		lineageTag: db219871-10df-4b74-90da-970e43007422
+
+	column Method
+		dataType: string
+		summarizeBy: none
+		sourceColumn: method
+		lineageTag: e95cf8cf-bfff-460c-acf8-94734bf6b4bc
+
+	column Projection
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		summarizeBy: none
+		sourceColumn: estimate_usd
+		lineageTag: 7ef03e37-1e59-4d83-a3f4-00f8e9dcc1cf
+
+	column '80% Lower'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		summarizeBy: none
+		sourceColumn: lower_80_usd
+		lineageTag: d5226531-f2de-47bd-b0a8-cc0a47c726e7
+
+	column '80% Upper'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		summarizeBy: none
+		sourceColumn: upper_80_usd
+		lineageTag: b413c59d-0597-42f7-8b13-00c5132f8db1
+
+	column '95% Lower'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		summarizeBy: none
+		sourceColumn: lower_95_usd
+		lineageTag: 2bdc2744-422b-4653-87ce-243f3ed33ac0
+
+	column '95% Upper'
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		summarizeBy: none
+		sourceColumn: upper_95_usd
+		lineageTag: eefdc022-afbc-4829-83d9-26cbc81f72f0
+
+	partition 'ZIP Forecasts' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "estateflow"),
+				  #"Navigation 1" = Source{[Schema = "marts", Item = "zip_market_forecast_display"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
