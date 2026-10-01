@@ -2,6 +2,10 @@
 
 This folder contains the editable Power BI Project (PBIP) for EstateFlow. It is a source-controlled report and semantic model, not a published Power BI Service link.
 
+## Ready-to-use report
+
+For a quick review, [download the October 2026 PBIX release](https://github.com/yuvrajriyar/EstateFlow/releases/download/v1.0.0/EstateFlow_Dashboard.pbix) and open it in the latest free Power BI Desktop for Windows. It includes the imported August 2026 data and all five pages, so PostgreSQL and Docker are not needed to explore the saved report. Hold Ctrl when clicking navigation buttons in Desktop editing mode, and select one ZIP on Forecast Experiment to show its charts. Refreshing requires your own database and the pipeline below. The PBIP in this folder is the editable source version and excludes the data cache.
+
 ## Pages
 
 1. **National Housing Market**: state, metro, and city slicers; latest-month headline measures; national home-value and rent history; year-over-year change and coverage; and a sortable ZIP-level market table.
@@ -23,4 +27,4 @@ The PBIP model references `marts.zip_month_market_metrics`, `marts.latest_zip_ma
 
 ## Data recency
 
-The screenshots in `../../docs/images/` are historical July 2026 previews. Check `../../docs/current-data.md` and `../../data/raw/source_manifest.json` for the verified source vintage. Rebuild the database, republish forecasts, and refresh Power BI before relying on displayed values.
+The screenshots in `../../docs/images/` show the August 2026 snapshot refreshed and reviewed on 1 October 2026. Check `../../docs/current-data.md` and `../../data/raw/source_manifest.json` for the verified source vintage. Rebuild the database, republish forecasts, and refresh Power BI before relying on displayed values.
