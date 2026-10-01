@@ -4,7 +4,7 @@ EstateFlow is a housing-market analytics project that takes Zillow home-value an
 
 ## Dashboard structure
 
-The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The final database rebuild, Power BI refresh, and Desktop review are release gates.
+The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The August database rebuild and forecast publication passed all pipeline quality gates locally. Power BI refresh and Desktop interaction review remain release gates.
 
 ## Dashboard previews
 
@@ -28,7 +28,7 @@ The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` conta
 - How much of the current market has a valid year-over-year comparison?
 - For eligible ZIPs, what do a simple baseline and validated trend model project at 3, 6 and 12 months, and how wide were their historically calibrated prediction bands?
 
-The published source vintage and coverage are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots remain labelled as July 2026 previews. The Power BI figures update after the PostgreSQL pipeline, forecast publication, and Desktop refresh.
+The published sources run through **31 August 2026**, with **462,410 matched ZIP-month records across 8,424 ZIPs** and **8,421 ZIPs in the latest matched snapshot**. The verified coverage and forecast results are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots remain labelled as July 2026 previews. The Power BI figures update after the PostgreSQL pipeline, forecast publication, and Desktop refresh.
 
 ### Refresh to the latest available Zillow data
 
@@ -80,9 +80,9 @@ flowchart LR
 ### Experimental forecasts
 
 - A separate, reproducible ZIP-index forecast experiment compares an unchanged-last-value benchmark with a damped log trend at 3-, 6-, and 12-month horizons.
-- It uses chronological selection, validation, calibration, and final-evaluation periods and reports empirical prediction-interval coverage. On the July 2026 source snapshot, only the 12-month rent trend cleared the material-improvement threshold; home-value projections and shorter-horizon rent projections use the flat benchmark.
+- It uses chronological selection, validation, calibration, and final-evaluation periods and reports empirical prediction-interval coverage. On the August 2026 source snapshot, only the 12-month rent trend cleared the material-improvement threshold; home-value projections and shorter-horizon rent projections use the flat benchmark. See [the current measured results](docs/current-data.md).
 - A separate **Forecast Experiment** Power BI page and import table are authored. Run the explicit database publish step and verify the page in Power BI Desktop before relying on it. A forecast is not an observed Zillow value, a property valuation, or net rental income. See the [forecast methodology and measured results](docs/forecast-methodology.md).
-- A September 2026 Zillow source-vintage check added August observations, but those newer files are not part of this repository snapshot. Forecast accuracy remains retrospective and exploratory; future-origin projections have not reached their target months.
+- The August source files were downloaded, validated, and published on 1 October 2026. Forecast accuracy remains retrospective and exploratory; future-origin projections have not reached their target months.
 
 ## Analytical model
 
@@ -168,8 +168,9 @@ tests/                      Automated project tests
 
 ## Next steps
 
-- Add a repeatable automated test run in CI.
-- Validate forecast results on a new Zillow release and verify the authored forecast page, filters and data refresh in Power BI Desktop.
+- Refresh all five Power BI pages and verify navigation, reset controls, and filter behaviour in Desktop.
+- Capture updated dashboard screenshots and publish the verified report.
+- Re-evaluate forecasts when new Zillow observations arrive; CI already runs unit and PostgreSQL quality-gate tests.
 - Assess whether carefully selected FRED or Census measures improve the market context without overstating causal explanations.
 
 ## Sources
