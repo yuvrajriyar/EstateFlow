@@ -68,7 +68,7 @@ class PipelineQualityGateTests(unittest.TestCase):
         self.connection.close()
 
     def _execute(self, statement: str) -> None:
-        with self.connection.cursor(cursor_factory=ClientCursor) as cursor:
+        with self.connection.cursor(row_factory=ClientCursor) as cursor:
             cursor.execute(statement)
 
     def _run_quality(self, filename: str) -> None:
