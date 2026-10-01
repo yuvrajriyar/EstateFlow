@@ -31,4 +31,6 @@ These are exploratory retrospective results on revised Zillow indices, not prosp
 
 ## Power BI acceptance
 
-The report definitions contain five pages. PostgreSQL rebuilding and forecast publication passed locally; Power BI Desktop refresh, navigation, filter reset, and visual review remain pending. Dashboard screenshots are historical July previews until refreshed and recaptured.
+On 1 October 2026, the author refreshed the five-page report in Power BI Desktop. Screenshots confirmed populated Overview, Market Explorer, ZIP Detail, Forecast Experiment, and Reader's Guide pages. The forecast page was checked with ZIP 01002, showing both charts and all six horizon/index rows; ZIP Detail was checked with San Francisco ZIP 94112. The author confirmed that navigation, Clear filters, and reopening through `Open EstateFlow.cmd` worked, restoring Overview and cleared filters.
+
+The dashboard previews now show the August 2026 snapshot. These are screenshots of the locally verified report, not a publicly hosted interactive report. Power BI Service publication and public access have not yet been verified.

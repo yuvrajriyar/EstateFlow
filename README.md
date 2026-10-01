@@ -4,7 +4,7 @@ EstateFlow is a housing-market analytics project that takes Zillow home-value an
 
 ## Dashboard structure
 
-The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The August database rebuild and forecast publication passed all pipeline quality gates locally. Power BI refresh and Desktop interaction review remain release gates.
+The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The August database rebuild and forecast publication passed all pipeline quality gates locally. All five pages were refreshed and visually reviewed on 1 October 2026; the author confirmed navigation, Clear filters, and launcher-based startup reset. The report is verified locally, but a publicly interactive Power BI deployment is not yet available.
 
 ## Dashboard previews
 
@@ -15,6 +15,14 @@ The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` conta
 ### Market explorer
 
 ![EstateFlow market explorer comparing state growth, gross yield, rent momentum, and metro markets](docs/images/estateflow-market-explorer.png)
+
+### ZIP detail
+
+![EstateFlow ZIP 94112 detail with August 2026 values, history, and benchmarks](docs/images/estateflow-zip-detail.png)
+
+### Forecast experiment
+
+![EstateFlow experimental forecasts for ZIP 01002 with empirical bounds](docs/images/estateflow-forecast-experiment.png)
 
 ### How to read the dashboard
 
@@ -28,7 +36,7 @@ The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` conta
 - How much of the current market has a valid year-over-year comparison?
 - For eligible ZIPs, what do a simple baseline and validated trend model project at 3, 6 and 12 months, and how wide were their historically calibrated prediction bands?
 
-The published sources run through **31 August 2026**, with **462,410 matched ZIP-month records across 8,424 ZIPs** and **8,421 ZIPs in the latest matched snapshot**. The verified coverage and forecast results are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots remain labelled as July 2026 previews. The Power BI figures update after the PostgreSQL pipeline, forecast publication, and Desktop refresh.
+The published sources run through **31 August 2026**, with **462,410 matched ZIP-month records across 8,424 ZIPs** and **8,421 ZIPs in the latest matched snapshot**. The verified coverage and forecast results are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots show the August 2026 snapshot after a successful Desktop refresh. The gallery is a static preview; clone the project to use the report locally.
 
 ### Refresh to the latest available Zillow data
 
@@ -74,14 +82,14 @@ flowchart LR
 - **Market Explorer:** state and metro filters; a growth-versus-yield state comparison; rent-momentum ranking; and a metro comparison table.
 - **How to Read the Dashboard:** explains the measures, suggests a practical reading order, and makes the coverage and investment-screening limitations explicit.
 - **ZIP Detail:** historical home value and rent, growth, and comparison with state benchmarks for the selected ZIP.
-- **Forecast Experiment:** ZIP-level home-value and rent-index projections and empirical 80%/95% bounds, explicitly separated from the observed pages; pending a local Desktop refresh and visual check.
+- **Forecast Experiment:** ZIP-level home-value and rent-index projections and empirical 80%/95% bounds, explicitly separated from the observed pages; refreshed and visually checked locally with one selected ZIP.
 - The editable Power BI Project (`.pbip`) and semantic-model/report definitions are in [`powerbi/EstateFlow_PowerBI_Analytics`](powerbi/EstateFlow_PowerBI_Analytics). Local Power BI cache and settings are intentionally excluded.
 
 ### Experimental forecasts
 
 - A separate, reproducible ZIP-index forecast experiment compares an unchanged-last-value benchmark with a damped log trend at 3-, 6-, and 12-month horizons.
 - It uses chronological selection, validation, calibration, and final-evaluation periods and reports empirical prediction-interval coverage. On the August 2026 source snapshot, only the 12-month rent trend cleared the material-improvement threshold; home-value projections and shorter-horizon rent projections use the flat benchmark. See [the current measured results](docs/current-data.md).
-- A separate **Forecast Experiment** Power BI page and import table are authored. Run the explicit database publish step and verify the page in Power BI Desktop before relying on it. A forecast is not an observed Zillow value, a property valuation, or net rental income. See the [forecast methodology and measured results](docs/forecast-methodology.md).
+- A separate **Forecast Experiment** Power BI page and import table are authored. Run the explicit database publish step before refreshing Power BI; the August-vintage page has been checked locally. A forecast is not an observed Zillow value, a property valuation, or net rental income. See the [forecast methodology and measured results](docs/forecast-methodology.md).
 - The August source files were downloaded, validated, and published on 1 October 2026. Forecast accuracy remains retrospective and exploratory; future-origin projections have not reached their target months.
 
 ## Analytical model
@@ -151,7 +159,7 @@ uv run python src/estateflow/run_forecast.py --publish-to-db
 docker compose exec -T postgres psql -U estateflow_user -d estateflow -v ON_ERROR_STOP=1 -f - < sql/quality/check_zip_market_forecasts.sql
 ```
 
-Then refresh the editable Power BI Project and review the **Forecast Experiment** page. The page is authored in the repo but still requires a Power BI Desktop render and interaction check. The established observed-data pipeline does not run forecasting automatically.
+Then refresh the editable Power BI Project and review the **Forecast Experiment** page. The August-vintage page was rendered and checked locally on 1 October 2026. The established observed-data pipeline does not run forecasting automatically.
 
 ## Repository map
 
@@ -168,8 +176,8 @@ tests/                      Automated project tests
 
 ## Next steps
 
-- Refresh all five Power BI pages and verify navigation, reset controls, and filter behaviour in Desktop.
-- Capture updated dashboard screenshots and publish the verified report.
+- Publish an interactive online report and verify visitor access. The five-page Desktop report, filter controls, and launcher reset have passed local acceptance.
+- Prepare the final handbook and release package.
 - Re-evaluate forecasts when new Zillow observations arrive; CI already runs unit and PostgreSQL quality-gate tests.
 - Assess whether carefully selected FRED or Census measures improve the market context without overstating causal explanations.
 
