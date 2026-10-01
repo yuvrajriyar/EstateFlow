@@ -35,9 +35,13 @@ def inspect_source(path: Path) -> dict:
         regions = set()
         observations = latest_count = 0
         for row in reader:
-            if len(row) != len(header) or row[2] in regions:
+            if not row:
+                continue
+            if len(row) < 9 or len(row) > len(header) or row[2] in regions:
                 raise ValueError(f"Invalid row or duplicate ZIP: {path.name}")
-            if len(row[2]) != 5 or not row[2].isdigit() or row[3] != "zipcode":
+            # Zillow may omit trailing empty observation columns from a CSV row.
+            row.extend([""] * (len(header) - len(row)))
+            if len(row[2]) != 5 or not row[2].isdigit() or row[3] not in {"zip", "zipcode"}:
                 raise ValueError(f"Invalid ZIP grain: {path.name}")
             regions.add(row[2])
             for value in row[9:]:
