@@ -2,6 +2,8 @@ services:
   postgres:
     image: postgres:17-alpine
     container_name: estateflow-postgres
+    # Parallel joins and quality checks need more than Docker's default /dev/shm.
+    shm_size: "1gb"
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
