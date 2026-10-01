@@ -1,0 +1,27 @@
+{
+  "retrieved_at_utc": "2026-10-01T20:28:12.018504+00:00",
+  "sources": {
+    "zhvi": {
+      "url": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+      "path": "data/raw/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv.gz",
+      "last_modified": "Wed, 16 Sep 2026 02:11:04 GMT",
+      "csv_sha256": "9dcd2793d97e5f60727bfc10563acdebe8461e48f8af83e09c333512a00521d9",
+      "first_month": "2000-01-31",
+      "latest_month": "2026-08-31",
+      "zip_rows": 26268,
+      "observations": 6482537,
+      "latest_nonmissing_zips": 26268
+    },
+    "zori": {
+      "url": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+      "path": "data/raw/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+      "last_modified": "Wed, 16 Sep 2026 02:11:38 GMT",
+      "csv_sha256": "a60963f429dbacf97e4371a8e4f9146322a09073d76031fc1fe477ca65183933",
+      "first_month": "2015-01-31",
+      "latest_month": "2026-08-31",
+      "zip_rows": 8459,
+      "observations": 463419,
+      "latest_nonmissing_zips": 8456
+    }
+  }
+}
