@@ -2,6 +2,13 @@
 
 EstateFlow is a housing-market analytics project that takes Zillow home-value and rent data from raw monthly files through a repeatable Python and PostgreSQL pipeline into a Power BI market explorer. It is built around a simple standard: make the data traceable, make the comparisons understandable, and show where the data has limits.
 
+## Use EstateFlow
+
+- **[Download the ready-to-use Power BI report](https://github.com/yuvrajriyar/EstateFlow/releases/download/v1.0.0/EstateFlow_Dashboard.pbix)** (55 MiB): open `EstateFlow_Dashboard.pbix` in the latest free Power BI Desktop for Windows. All five pages and the imported August 2026 snapshot are included. You do not need PostgreSQL, Docker, a Power BI Pro subscription, or this repository to explore the saved report. Do not refresh unless you have configured your own database. In Desktop editing mode, hold Ctrl when clicking navigation buttons; select one ZIP on Forecast Experiment to populate the charts.
+- **[Explore or rebuild the source project](#run-the-pipeline)**: use the Python pipeline, SQL models, editable PBIP, tests and source documentation below. The source project excludes the local Power BI data cache, so rebuild and refresh it to load data.
+
+See the [October 2026 release notes](https://github.com/yuvrajriyar/EstateFlow/releases/tag/v1.0.0). Release month is October; the embedded Zillow observation month is August 2026. The PBIX SHA-256 is `ef79447f257286eabb99378f6bf239fceb36dae34fd9feed33bf61d4ab0d85f5`.
+
 ## Dashboard structure
 
 The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The August database rebuild and forecast publication passed all pipeline quality gates locally. All five pages were refreshed and visually reviewed on 1 October 2026; the author confirmed navigation, Clear filters, and launcher-based startup reset. The report is verified locally, but a publicly interactive Power BI deployment is not yet available.
@@ -36,7 +43,7 @@ The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` conta
 - How much of the current market has a valid year-over-year comparison?
 - For eligible ZIPs, what do a simple baseline and validated trend model project at 3, 6 and 12 months, and how wide were their historically calibrated prediction bands?
 
-The published sources run through **31 August 2026**, with **462,410 matched ZIP-month records across 8,424 ZIPs** and **8,421 ZIPs in the latest matched snapshot**. The verified coverage and forecast results are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots show the August 2026 snapshot after a successful Desktop refresh. The gallery is a static preview; clone the project to use the report locally.
+The published sources run through **31 August 2026**, with **462,410 matched ZIP-month records across 8,424 ZIPs** and **8,421 ZIPs in the latest matched snapshot**. The verified coverage and forecast results are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots show the August 2026 snapshot after a successful Desktop refresh. The gallery is a static preview; download the released PBIX to explore immediately, or clone the source project to rebuild it.
 
 ### Refresh to the latest available Zillow data
 
