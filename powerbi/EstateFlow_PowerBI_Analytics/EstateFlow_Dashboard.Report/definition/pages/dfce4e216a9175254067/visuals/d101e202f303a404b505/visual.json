@@ -3,9 +3,9 @@
   "name": "d101e202f303a404b505",
   "position": {
     "x": 48,
-    "y": 145,
+    "y": 198.12,
     "z": 13,
-    "height": 22,
+    "height": 27,
     "width": 1824,
     "tabOrder": 13
   },
@@ -19,19 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "HOW TO READ  /  ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "9pt",
-                      "color": "#D8C398"
-                    }
-                  },
-                  {
-                    "value": "Choose a location, read the headline medians, follow the long-term trend, then compare ZIP codes by gross yield. See Guide & Definitions for details.",
+                    "value": "START HERE  /  Choose a location. Medians give each observed ZIP equal weight. History coverage varies by month; high rent / value needs investigation.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "9pt",
-                      "color": "#AAA49A"
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
                     }
                   }
                 ],
@@ -75,28 +67,28 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "4D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "4D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "4D"
                 }
               }
             }

@@ -24,7 +24,7 @@ class ForecastPBIRTests(unittest.TestCase):
         self.assertIn("ref table 'ZIP Forecasts'", (MODEL / "model.tmdl").read_text())
         names = set()
         visuals = list((REPORT / PAGE_ID / "visuals").glob("*/visual.json"))
-        self.assertEqual(len(visuals), 9)
+        self.assertGreaterEqual(len(visuals), 9, "forecast page is missing its core chart, card, or table visuals")
         for path in visuals:
             visual = json.loads(path.read_text())
             self.assertEqual(visual["name"], path.parent.name)

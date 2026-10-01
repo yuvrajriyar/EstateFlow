@@ -1,20 +1,233 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "e105f206a307b408c509",
-  "position": { "x": 930, "y": 702, "z": 4, "height": 322, "width": 942, "tabOrder": 4 },
+  "position": {
+    "x": 930,
+    "y": 603,
+    "width": 942,
+    "height": 417,
+    "z": 20,
+    "tabOrder": 20
+  },
   "visual": {
     "visualType": "textbox",
-    "objects": { "general": [{ "properties": { "paragraphs": [
-      { "textRuns": [{ "value": "IMPORTANT CONTEXT", "textStyle": { "fontFamily": "Georgia", "fontSize": "18pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "This dashboard is a market-screening tool built from Zillow ZHVI and ZORI indices. It describes ZIP-level market conditions, not the economics of a specific property.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "Gross yield excludes vacancy, maintenance, property taxes, insurance, management, financing, transaction costs and renovation. Treat it as a first-pass comparison, not expected net return.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "Data availability varies by ZIP and month. Missing records are not estimated in the mart; YoY Coverage shows how much of the current market has a valid annual comparison.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "SOURCE  /  Zillow Research  •  LATEST JOINED MONTH  /  July 2026", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "9pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" }
-    ] } }] },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "HOW TO READ THE FORECAST",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "17pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "PROJECTION AND RANGE",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The middle line is a model estimate 3, 6 or 12 months ahead of the observed as-of month. The outer lines are the 80% empirical range; the table and hover details also show the wider 95% range.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "WHY A LINE CAN BE FLAT",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A last-observed-value baseline is used unless a damped trend improves earlier validation results. A flat forecast is a deliberate model choice.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "WHAT 80% AND 95% MEAN HERE",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Ranges are calibrated from historical forecast errors pooled across ZIPs. They are not confidence intervals for a mean and do not guarantee future coverage in a particular ZIP.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "WHEN A ZIP IS MISSING",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forecasting requires 24 complete observed months. No eligible record means no forecast. Experimental projections describe Zillow indices, not future property income or an investment recommendation.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
-      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#11110F'" } } } } }, "transparency": { "expr": { "Literal": { "Value": "0D" } } } } }],
-      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#34322D'" } } } } }, "width": { "expr": { "Literal": { "Value": "1D" } } }, "radius": { "expr": { "Literal": { "Value": "0D" } } } } }],
-      "padding": [{ "properties": { "top": { "expr": { "Literal": { "Value": "24D" } } }, "bottom": { "expr": { "Literal": { "Value": "24D" } } }, "left": { "expr": { "Literal": { "Value": "24D" } } }, "right": { "expr": { "Literal": { "Value": "24D" } } } } }]
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#11110F'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#34322D'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

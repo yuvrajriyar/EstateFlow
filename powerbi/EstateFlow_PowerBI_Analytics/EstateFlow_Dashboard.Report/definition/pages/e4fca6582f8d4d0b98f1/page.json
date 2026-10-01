@@ -4,5 +4,67 @@
   "displayName": "Forecast Experiment",
   "displayOption": "FitToPage",
   "height": 1080,
-  "width": 1920
+  "width": 1920,
+  "visualInteractions": [
+    {
+      "source": "fc100004000400040004",
+      "target": "fc100003000300030003",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100005000500050005",
+      "target": "fc100003000300030003",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100005000500050005",
+      "target": "fc100004000400040004",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100006000600060006",
+      "target": "fc100003000300030003",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100006000600060006",
+      "target": "fc100004000400040004",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100006000600060006",
+      "target": "fc100005000500050005",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100008000800080008",
+      "target": "fc100003000300030003",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100008000800080008",
+      "target": "fc100004000400040004",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100008000800080008",
+      "target": "fc100005000500050005",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100007000700070007",
+      "target": "fc100003000300030003",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100007000700070007",
+      "target": "fc100004000400040004",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fc100007000700070007",
+      "target": "fc100005000500050005",
+      "type": "NoFilter"
+    }
+  ]
 }

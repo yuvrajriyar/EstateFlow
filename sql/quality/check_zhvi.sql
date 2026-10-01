@@ -24,3 +24,18 @@ FROM (
     GROUP BY zip_code, month
     HAVING COUNT(*) > 1
 ) AS duplicates;
+
+-- Fail the pipeline on failed data checks. Diagnostic queries above remain readable.
+DO $quality$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM staging.zhvi_zip_month) THEN
+        RAISE EXCEPTION 'quality gate check_zhvi: staging table is empty';
+    END IF;
+    IF EXISTS (SELECT 1 FROM staging.zhvi_zip_month WHERE zip_code IS NULL OR month IS NULL OR zhvi_usd IS NULL OR zhvi_usd <= 0) THEN
+        RAISE EXCEPTION 'quality gate check_zhvi: missing or non-positive ZIP-month home values';
+    END IF;
+    IF EXISTS (SELECT 1 FROM staging.zhvi_zip_month GROUP BY zip_code, month HAVING COUNT(*) > 1) THEN
+        RAISE EXCEPTION 'quality gate check_zhvi: duplicate ZIP-month keys';
+    END IF;
+END
+$quality$;

@@ -1,13 +1,76 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c102d203e304f405a506",
-  "position": { "x": 432, "y": 824, "z": 31, "height": 200, "width": 360, "tabOrder": 31 },
+  "position": {
+    "x": 432,
+    "y": 826.2,
+    "z": 31,
+    "height": 185,
+    "width": 360,
+    "tabOrder": 31
+  },
   "visual": {
     "visualType": "cardVisual",
-    "query": { "queryState": { "Data": { "projections": [
-      { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Rent YoY" } }, "queryRef": "Latest ZIP Market.Median Rent YoY", "nativeQueryRef": "Median Rent YoY" }
-    ] } } },
-    "objects": { "value": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } } } }] },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Rent YoY"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Rent YoY",
+              "nativeQueryRef": "Median Rent YoY"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Latest ZIP Market"
+                        }
+                      },
+                      "Property": "Rent Growth Colour"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

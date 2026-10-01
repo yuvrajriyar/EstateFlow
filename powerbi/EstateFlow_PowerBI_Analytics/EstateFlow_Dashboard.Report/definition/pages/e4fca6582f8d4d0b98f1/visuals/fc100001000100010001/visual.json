@@ -1,14 +1,101 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "fc100001000100010001",
-  "position": { "x": 48, "y": 24, "z": 0, "height": 120, "width": 1030, "tabOrder": 0 },
+  "position": {
+    "x": 48,
+    "y": 86.2,
+    "z": 0,
+    "height": 111,
+    "width": 1030,
+    "tabOrder": 0
+  },
   "visual": {
     "visualType": "textbox",
-    "objects": { "general": [{ "properties": { "paragraphs": [
-      { "textRuns": [{ "value": "ESTATEFLOW  /  EXPERIMENTAL OUTLOOK", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "11pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "ZIP Market Forecasts", "textStyle": { "fontFamily": "Georgia", "fontSize": "30pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "Projected Zillow index levels  /  3, 6 and 12 months ahead", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "11pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
-    ] } }] },
-    "drillFilterOtherVisuals": true
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ESTATEFLOW  /  EXPERIMENTAL OUTLOOK",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "11pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "ZIP Market Forecasts",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "30pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Projected Zillow index levels  /  3, 6 and 12 months ahead",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#AAA49A"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

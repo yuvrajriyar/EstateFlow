@@ -1,13 +1,14 @@
 table 'ZIP Forecasts'
 	lineageTag: 5747d9a7-86e2-4d97-a989-3fe88c2e04df
-
 	measure 'Eligible ZIPs' = DISTINCTCOUNT('ZIP Forecasts'[ZIP Code])
 		formatString: #,0
 		lineageTag: a805f2c8-d331-4c69-a789-041b7f223acd
 
 	measure 'Forecast As-Of Month' = MAX('ZIP Forecasts'[As-Of Month])
-		formatString: mmmm yyyy
+		formatString: mmm yyyy
 		lineageTag: b90a161f-f776-4dbd-9648-3a9af09e4b53
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Home Projection' =
 			IF(
@@ -159,3 +160,30 @@ table 'ZIP Forecasts'
 				  #"Navigation 1"
 
 	annotation PBI_ResultType = Table
+	measure 'Home Forecast Title' = "HOME VALUE INDEX  /  " & IF(HASONEVALUE('ZIP Forecasts'[ZIP Code]), "ZIP " & SELECTEDVALUE('ZIP Forecasts'[ZIP Code]), "SELECT ONE ZIP")
+		displayFolder: Dashboard finish
+		lineageTag: 1ea9d7ad-0744-56a0-89c4-8b7810fef2f6
+
+	measure 'Home 95% Lower' = IF(HASONEVALUE('ZIP Forecasts'[ZIP Code]), CALCULATE(SELECTEDVALUE('ZIP Forecasts'[95% Lower]), 'ZIP Forecasts'[Index] = "Home value index"))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: d1b8bc1e-4dcf-532c-a0c7-20507e7e3d7c
+
+	measure 'Home 95% Upper' = IF(HASONEVALUE('ZIP Forecasts'[ZIP Code]), CALCULATE(SELECTEDVALUE('ZIP Forecasts'[95% Upper]), 'ZIP Forecasts'[Index] = "Home value index"))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: 9e071c32-bc6d-5a7e-9620-012b4ad68d76
+
+	measure 'Rent Forecast Title' = "MONTHLY RENT INDEX  /  " & IF(HASONEVALUE('ZIP Forecasts'[ZIP Code]), "ZIP " & SELECTEDVALUE('ZIP Forecasts'[ZIP Code]), "SELECT ONE ZIP")
+		displayFolder: Dashboard finish
+		lineageTag: 771a556d-8d3f-5626-8d24-d0e9cf54ed18
+
+	measure 'Rent 95% Lower' = IF(HASONEVALUE('ZIP Forecasts'[ZIP Code]), CALCULATE(SELECTEDVALUE('ZIP Forecasts'[95% Lower]), 'ZIP Forecasts'[Index] = "Monthly rent index"))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: af583b73-f152-5da6-9a20-8eb354e35cf3
+
+	measure 'Rent 95% Upper' = IF(HASONEVALUE('ZIP Forecasts'[ZIP Code]), CALCULATE(SELECTEDVALUE('ZIP Forecasts'[95% Upper]), 'ZIP Forecasts'[Index] = "Monthly rent index"))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: c03dccb9-9f43-578e-9f20-a3adb8fd741c

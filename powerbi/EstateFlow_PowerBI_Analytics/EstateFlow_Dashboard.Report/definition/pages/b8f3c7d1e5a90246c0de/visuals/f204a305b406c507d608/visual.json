@@ -1,22 +1,101 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f204a305b406c507d608",
-  "position": { "x": 48, "y": 145, "z": 3, "height": 28, "width": 1824, "tabOrder": 3 },
+  "position": {
+    "x": 48,
+    "y": 198.12,
+    "z": 3,
+    "height": 32,
+    "width": 1824,
+    "tabOrder": 3
+  },
   "visual": {
     "visualType": "textbox",
-    "objects": { "general": [{ "properties": { "paragraphs": [{
-      "textRuns": [
-        { "value": "HOW TO READ  /  ", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "9pt", "color": "#D8C398" } },
-        { "value": "Each bubble is a state: farther right means stronger home-value growth, higher means greater gross yield, and larger means more ZIP coverage. Confirm the balance using rent momentum and the metro comparison table.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "9pt", "color": "#AAA49A" } }
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "READ THE CHART  /  One bubble per state: right = higher home growth, up = higher rent / value, larger = more covered ZIPs. + / − and colours show growth direction. Check YoY coverage below.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ],
-      "horizontalTextAlignment": "left"
-    }] } }] },
-    "visualContainerObjects": { "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }], "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }], "padding": [{ "properties": {
-      "top": { "expr": { "Literal": { "Value": "0D" } } },
-      "bottom": { "expr": { "Literal": { "Value": "0D" } } },
-      "left": { "expr": { "Literal": { "Value": "0D" } } },
-      "right": { "expr": { "Literal": { "Value": "0D" } } }
-    } }] },
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

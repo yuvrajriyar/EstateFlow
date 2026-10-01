@@ -3,9 +3,9 @@
   "name": "41fef86ad8126a244c94",
   "position": {
     "x": 48,
-    "y": 24,
+    "y": 86.2,
     "z": 5,
-    "height": 120,
+    "height": 111,
     "width": 980,
     "tabOrder": 5
   },
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "National Housing Market",
+                    "value": "Housing Market Overview",
                     "textStyle": {
                       "fontFamily": "Georgia",
                       "fontSize": "30pt",
@@ -64,10 +64,34 @@
       "padding": [
         {
           "properties": {
-            "top": { "expr": { "Literal": { "Value": "0D" } } },
-            "bottom": { "expr": { "Literal": { "Value": "0D" } } },
-            "left": { "expr": { "Literal": { "Value": "0D" } } },
-            "right": { "expr": { "Literal": { "Value": "0D" } } }
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
           }
         }
       ]

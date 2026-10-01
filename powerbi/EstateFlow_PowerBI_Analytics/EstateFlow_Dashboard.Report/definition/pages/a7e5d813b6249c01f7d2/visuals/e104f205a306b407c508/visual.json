@@ -1,26 +1,233 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "e104f205a306b407c508",
-  "position": { "x": 48, "y": 550, "z": 3, "height": 474, "width": 850, "tabOrder": 3 },
+  "position": {
+    "x": 48,
+    "y": 603,
+    "width": 850,
+    "height": 417,
+    "z": 20,
+    "tabOrder": 20
+  },
   "visual": {
     "visualType": "textbox",
-    "objects": { "general": [{ "properties": { "paragraphs": [
-      { "textRuns": [{ "value": "WHAT TO LOOK FOR", "textStyle": { "fontFamily": "Georgia", "fontSize": "18pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "BALANCE, NOT ONE WINNING NUMBER", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "A compelling market usually combines reasonable yield, stable or improving rents, and sustainable home-value movement. The highest yield alone can indicate greater risk.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "DIVERGENCE BETWEEN RENT AND VALUE", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "When rents grow faster than home values, gross yield may improve. When values rise faster than rents, yield may compress even while owners gain appreciation.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "CONSISTENCY OVER TIME", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "Use the historical chart to distinguish a durable trend from a single-month spike. Smooth, sustained movement is generally more informative than one unusual observation.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "DATA COVERAGE", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "Check ZIP Count and YoY Coverage before drawing conclusions. Filters can reduce the sample, and not every ZIP has a complete history.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "A PRACTICAL SCREENING SEQUENCE", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "10pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "Filter a target market → shortlist ZIP codes with credible yield → compare rent and value growth → investigate vacancies, taxes, insurance, expenses and neighbourhood conditions outside this dashboard.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
-    ] } }] },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "WHAT TO LOOK FOR",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "17pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "READ SEVERAL SIGNALS TOGETHER",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Compare home-value growth, rent growth, price and coverage. A high ratio may reflect low values or unusual rents; it is a reason to investigate further.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "COMPARE LIKE WITH LIKE",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Snapshot comparisons use one common observed month. ZIP Detail compares the selected ZIP with covered ZIPs in its metro, state and the country. Each group includes the selected ZIP.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "CHECK THE CONTEXT",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Historical medians use the ZIPs observed in each month, so coverage can change. Missing YoY data may reflect a short or incomplete history.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "KEEP THE LIMITS IN VIEW",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "These are ZIP-level indices, not the price or rent of an individual property. Annualised rent is a gross run rate, not collected rent or net income.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
-      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#11110F'" } } } } }, "transparency": { "expr": { "Literal": { "Value": "0D" } } } } }],
-      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "color": { "solid": { "color": { "expr": { "Literal": { "Value": "'#34322D'" } } } } }, "width": { "expr": { "Literal": { "Value": "1D" } } }, "radius": { "expr": { "Literal": { "Value": "0D" } } } } }],
-      "padding": [{ "properties": { "top": { "expr": { "Literal": { "Value": "24D" } } }, "bottom": { "expr": { "Literal": { "Value": "24D" } } }, "left": { "expr": { "Literal": { "Value": "24D" } } }, "right": { "expr": { "Literal": { "Value": "24D" } } } } }]
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#11110F'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#34322D'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

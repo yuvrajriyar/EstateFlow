@@ -1,34 +1,285 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "fc100006000600060006",
-  "position": { "x": 48, "y": 235, "z": 5, "height": 380, "width": 885, "tabOrder": 5 },
+  "position": {
+    "x": 48,
+    "y": 281.38,
+    "z": 5,
+    "height": 351.5,
+    "width": 885,
+    "tabOrder": 5
+  },
   "visual": {
     "visualType": "lineChart",
     "query": {
       "queryState": {
-        "Category": { "projections": [
-          { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Forecast Month" } }, "queryRef": "ZIP Forecasts.Forecast Month", "nativeQueryRef": "Forecast Month", "active": true }
-        ] },
-        "Y": { "projections": [
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Home Projection" } }, "queryRef": "ZIP Forecasts.Home Projection", "nativeQueryRef": "Home Projection" },
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Home 80% Lower" } }, "queryRef": "ZIP Forecasts.Home 80% Lower", "nativeQueryRef": "Home 80% Lower" },
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Home 80% Upper" } }, "queryRef": "ZIP Forecasts.Home 80% Upper", "nativeQueryRef": "Home 80% Upper" }
-        ] }
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Forecast Month"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Forecast Month",
+              "nativeQueryRef": "Forecast Month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Home Projection"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Home Projection",
+              "nativeQueryRef": "Home Projection"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Home 80% Lower"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Home 80% Lower",
+              "nativeQueryRef": "Home 80% Lower"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Home 80% Upper"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Home 80% Upper",
+              "nativeQueryRef": "Home 80% Upper"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Home 95% Lower"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Home 95% Lower",
+              "nativeQueryRef": "Home 95% Lower"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Home 95% Upper"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Home 95% Upper",
+              "nativeQueryRef": "Home 95% Upper"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Forecast As-Of Month"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Forecast As-Of Month",
+              "nativeQueryRef": "Forecast As-Of Month"
+            }
+          ]
+        }
       },
-      "sortDefinition": { "sort": [
-        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Forecast Month" } }, "direction": "Ascending" }
-      ], "isDefaultSort": true }
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ZIP Forecasts"
+                  }
+                },
+                "Property": "Forecast Month"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
     },
     "objects": {
-      "categoryAxis": [{ "properties": { "axisType": { "expr": { "Literal": { "Value": "'Categorical'" } } } } }],
-      "valueAxis": [{ "properties": { "showAxisTitle": { "expr": { "Literal": { "Value": "false" } } } } }],
-      "lineStyles": [{ "properties": { "strokeWidth": { "expr": { "Literal": { "Value": "2D" } } }, "showMarker": { "expr": { "Literal": { "Value": "true" } } } } }]
+      "categoryAxis": [
+        {
+          "properties": {
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Categorical'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subheader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
-    "visualContainerObjects": { "title": [{ "properties": {
-      "show": { "expr": { "Literal": { "Value": "true" } } },
-      "text": { "expr": { "Literal": { "Value": "'HOME VALUE INDEX  /  PROJECTION & 80% BOUNDS'" } } },
-      "fontSize": { "expr": { "Literal": { "Value": "15D" } } }
-    } }] },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Home Forecast Title"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Projection with empirical 80% bounds'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

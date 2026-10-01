@@ -21,4 +21,6 @@ ref table 'ZIP Forecasts'
 ref table LocalDateTable_5babfcfd-ffa5-4bb2-a0c1-30ac2e780b86
 
 ref cultureInfo en-US
-
+ref table LocalDateTable_dc8baba7-f3ee-466e-a59e-ae98375bc54d
+ref table LocalDateTable_c1335c05-9767-40c2-bc63-743d6f7c7f8b
+ref table 'Comparison Scope'

@@ -1,0 +1,190 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "de701a02b03c04d05e06",
+  "displayName": "ZIP Detail",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "visualInteractions": [
+    {
+      "source": "de710003000200020002",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de710004000200020002",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de710004000200020002",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720005000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720005000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720005000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de730001000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de730001000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de730001000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720004000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720004000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720004000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de710005000500050005",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de710005000500050005",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de710005000500050005",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720001000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720001000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720001000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740001000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740001000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740001000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720002000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720002000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720002000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de730002000200020002",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de730002000200020002",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de730002000200020002",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740003000300030003",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740003000300030003",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740003000300030003",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720003000100010001",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720003000100010001",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de720003000100010001",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740002000200020002",
+      "target": "de710002000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740002000200020002",
+      "target": "de710003000200020002",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de740002000200020002",
+      "target": "de710004000200020002",
+      "type": "NoFilter"
+    }
+  ]
+}

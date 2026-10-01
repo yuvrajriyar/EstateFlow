@@ -1,13 +1,53 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c103d204e305f406a507",
-  "position": { "x": 816, "y": 824, "z": 32, "height": 200, "width": 408, "tabOrder": 32 },
+  "position": {
+    "x": 816,
+    "y": 826.2,
+    "z": 32,
+    "height": 185,
+    "width": 408,
+    "tabOrder": 32
+  },
   "visual": {
     "visualType": "cardVisual",
-    "query": { "queryState": { "Data": { "projections": [
-      { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "YoY Coverage" } }, "queryRef": "Latest ZIP Market.YoY Coverage", "nativeQueryRef": "YoY Coverage" }
-    ] } } },
-    "objects": { "value": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } } } }] },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "YoY Coverage"
+                }
+              },
+              "queryRef": "Latest ZIP Market.YoY Coverage",
+              "nativeQueryRef": "YoY Coverage"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

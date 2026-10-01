@@ -1,15 +1,78 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "fc100005000500050005",
-  "position": { "x": 1625, "y": 48, "z": 4, "height": 80, "width": 247, "tabOrder": 4 },
+  "position": {
+    "x": 1625,
+    "y": 108.4,
+    "z": 4,
+    "height": 80,
+    "width": 247,
+    "tabOrder": 4
+  },
   "visual": {
     "visualType": "slicer",
-    "query": { "queryState": { "Values": { "projections": [
-      { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "ZIP Code" } }, "queryRef": "ZIP Forecasts.ZIP Code", "nativeQueryRef": "ZIP Code" }
-    ] } } },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "ZIP Code"
+                }
+              },
+              "queryRef": "ZIP Forecasts.ZIP Code",
+              "nativeQueryRef": "ZIP Code",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
     "objects": {
-      "data": [{ "properties": { "mode": { "expr": { "Literal": { "Value": "'Dropdown'" } } } } }],
-      "header": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "text": { "expr": { "Literal": { "Value": "'ZIP CODE'" } } } } }]
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ZIP CODE'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

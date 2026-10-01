@@ -1,44 +1,237 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f205a306b407c508d609",
-  "position": { "x": 48, "y": 190, "z": 10, "height": 520, "width": 1176, "tabOrder": 10 },
+  "position": {
+    "x": 48,
+    "y": 239.75,
+    "z": 10,
+    "height": 481,
+    "width": 1176,
+    "tabOrder": 10
+  },
   "visual": {
     "visualType": "scatterChart",
-    "query": { "queryState": {
-      "Category": { "projections": [
-        { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "State" } }, "queryRef": "Latest ZIP Market.State", "nativeQueryRef": "State" }
-      ] },
-      "X": { "projections": [
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Home Value YoY" } }, "queryRef": "Latest ZIP Market.Median Home Value YoY", "nativeQueryRef": "Median Home Value YoY" }
-      ] },
-      "Y": { "projections": [
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Gross Rent-to-Value" } }, "queryRef": "Latest ZIP Market.Median Gross Rent-to-Value", "nativeQueryRef": "Median Gross Rent-to-Value" }
-      ] },
-      "Size": { "projections": [
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Latest ZIP Count" } }, "queryRef": "Latest ZIP Market.Latest ZIP Count", "nativeQueryRef": "Latest ZIP Count" }
-      ] },
-      "Tooltips": { "projections": [
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Home Value" } }, "queryRef": "Latest ZIP Market.Median Home Value", "nativeQueryRef": "Median Home Value" },
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Monthly Rent" } }, "queryRef": "Latest ZIP Market.Median Monthly Rent", "nativeQueryRef": "Median Monthly Rent" },
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Rent YoY" } }, "queryRef": "Latest ZIP Market.Median Rent YoY", "nativeQueryRef": "Median Rent YoY" },
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "YoY Coverage" } }, "queryRef": "Latest ZIP Market.YoY Coverage", "nativeQueryRef": "YoY Coverage" }
-      ] }
-    } },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "State"
+                }
+              },
+              "queryRef": "Latest ZIP Market.State",
+              "nativeQueryRef": "State",
+              "active": true
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Latest ZIP Count"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Latest ZIP Count",
+              "nativeQueryRef": "Latest ZIP Count"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Home Value"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Home Value",
+              "nativeQueryRef": "Median Home Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Monthly Rent"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Monthly Rent",
+              "nativeQueryRef": "Median Monthly Rent"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Rent YoY"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Rent YoY",
+              "nativeQueryRef": "Median Rent YoY"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "YoY Coverage"
+                }
+              },
+              "queryRef": "Latest ZIP Market.YoY Coverage",
+              "nativeQueryRef": "YoY Coverage"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Home Value YoY"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Home Value YoY",
+              "nativeQueryRef": "Median Home Value YoY",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Gross Rent-to-Value"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Gross Rent-to-Value",
+              "nativeQueryRef": "Median Gross Rent-to-Value"
+            }
+          ]
+        }
+      }
+    },
     "objects": {
-      "categoryAxis": [{ "properties": {
-        "showAxisTitle": { "expr": { "Literal": { "Value": "true" } } },
-        "titleText": { "expr": { "Literal": { "Value": "'HOME VALUE GROWTH (YOY)'" } } },
-        "labelPrecision": { "expr": { "Literal": { "Value": "1L" } } },
-        "gridlineShow": { "expr": { "Literal": { "Value": "true" } } },
-        "gridlineStyle": { "expr": { "Literal": { "Value": "'dotted'" } } }
-      } }],
-      "valueAxis": [{ "properties": {
-        "showAxisTitle": { "expr": { "Literal": { "Value": "true" } } },
-        "titleText": { "expr": { "Literal": { "Value": "'GROSS YIELD'" } } },
-        "labelPrecision": { "expr": { "Literal": { "Value": "1L" } } },
-        "gridlineShow": { "expr": { "Literal": { "Value": "true" } } },
-        "gridlineStyle": { "expr": { "Literal": { "Value": "'dotted'" } } }
-      } }],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'HOME VALUE GROWTH (YOY)'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dotted'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'GROSS RENT-TO-VALUE'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dotted'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "categoryLabels": [
         {
           "properties": {
@@ -67,20 +260,113 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [{ "properties": {
-        "show": { "expr": { "Literal": { "Value": "true" } } },
-        "text": { "expr": { "Literal": { "Value": "'STATE POSITIONING  /  GROWTH VS YIELD'" } } },
-        "fontSize": { "expr": { "Literal": { "Value": "15D" } } }
-      } }],
-      "subTitle": [{ "properties": {
-        "show": { "expr": { "Literal": { "Value": "false" } } }
-      } }],
-      "padding": [{ "properties": {
-        "top": { "expr": { "Literal": { "Value": "12D" } } },
-        "bottom": { "expr": { "Literal": { "Value": "12D" } } },
-        "left": { "expr": { "Literal": { "Value": "12D" } } },
-        "right": { "expr": { "Literal": { "Value": "12D" } } }
-      } }]
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Explorer Title"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Home value growth versus gross rent-to-value'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }
