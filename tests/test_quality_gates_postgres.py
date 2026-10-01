@@ -10,7 +10,6 @@ import unittest
 from pathlib import Path
 
 import psycopg
-from psycopg import ClientCursor
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -68,7 +67,7 @@ class PipelineQualityGateTests(unittest.TestCase):
         self.connection.close()
 
     def _execute(self, statement: str) -> None:
-        with self.connection.cursor(row_factory=ClientCursor) as cursor:
+        with self.connection.cursor() as cursor:
             cursor.execute(statement)
 
     def _run_quality(self, filename: str) -> None:
