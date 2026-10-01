@@ -1,15 +1,78 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "fc100004000400040004",
-  "position": { "x": 1365, "y": 48, "z": 3, "height": 80, "width": 235, "tabOrder": 3 },
+  "position": {
+    "x": 1365,
+    "y": 108.4,
+    "z": 3,
+    "height": 80,
+    "width": 235,
+    "tabOrder": 3
+  },
   "visual": {
     "visualType": "slicer",
-    "query": { "queryState": { "Values": { "projections": [
-      { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "ZIP Forecasts" } }, "Property": "Metro" } }, "queryRef": "ZIP Forecasts.Metro", "nativeQueryRef": "Metro" }
-    ] } } },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ZIP Forecasts"
+                    }
+                  },
+                  "Property": "Metro"
+                }
+              },
+              "queryRef": "ZIP Forecasts.Metro",
+              "nativeQueryRef": "Metro",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
     "objects": {
-      "data": [{ "properties": { "mode": { "expr": { "Literal": { "Value": "'Dropdown'" } } } } }],
-      "header": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "text": { "expr": { "Literal": { "Value": "'METRO'" } } } } }]
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'METRO'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

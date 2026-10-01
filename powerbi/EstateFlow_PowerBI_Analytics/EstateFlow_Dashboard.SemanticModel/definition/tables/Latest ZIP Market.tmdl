@@ -1,15 +1,14 @@
 table 'Latest ZIP Market'
 	lineageTag: 87b46ff2-db72-4020-8b98-234acca8e547
-
 	measure 'Latest ZIP Count' =
-			
+
 			DISTINCTCOUNT('Latest ZIP Market'[ZIP Code])
 		formatString: #,0
 		displayFolder: Core KPIs
 		lineageTag: 345977d6-6aae-4ebf-941b-febc0a273c5c
 
 	measure 'Median Home Value' =
-			
+
 			MEDIAN('Latest ZIP Market'[Home Value])
 		formatString: \$#,0;(\$#,0);\$#,0
 		displayFolder: Core KPIs
@@ -18,7 +17,7 @@ table 'Latest ZIP Market'
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	measure 'Median Monthly Rent' =
-			
+
 			MEDIAN('Latest ZIP Market'[Monthly Rent])
 		formatString: \$#,0;(\$#,0);\$#,0
 		displayFolder: Core KPIs
@@ -27,7 +26,7 @@ table 'Latest ZIP Market'
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	measure 'Median Gross Rent-to-Value' =
-			
+
 			DIVIDE(
 			    MEDIAN('Latest ZIP Market'[Gross Yield %]),
 			    100
@@ -37,7 +36,7 @@ table 'Latest ZIP Market'
 		lineageTag: f8fb3432-2367-448e-93dc-318ac87a9a6a
 
 	measure 'Latest Data Month' =
-			
+
 			MAX('Latest ZIP Market'[Month])
 		formatString: mmmm yyyy
 		displayFolder: Core KPIs
@@ -46,27 +45,27 @@ table 'Latest ZIP Market'
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	measure 'Median Home Value YoY' =
-			
+
 			DIVIDE(
 			    MEDIAN('Latest ZIP Market'[home_value_yoy_pct]),
 			    100
 			)
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: +0.00%;-0.00%;0.00%
 		displayFolder: Market Growth
 		lineageTag: 59824e62-9a9c-4fcb-8e96-9bf03fe9253e
 
 	measure 'Median Rent YoY' =
-			
+
 			DIVIDE(
 			    MEDIAN('Latest ZIP Market'[rent_yoy_pct]),
 			    100
 			)
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: +0.00%;-0.00%;0.00%
 		displayFolder: Market Growth
 		lineageTag: d936b56c-91d4-4b70-8a43-34294a44b727
 
 	measure 'YoY Coverage' =
-			
+
 			DIVIDE(
 			    CALCULATE(
 			        COUNTROWS('Latest ZIP Market'),
@@ -266,3 +265,180 @@ table 'Latest ZIP Market'
 
 	annotation PBI_ResultType = Table
 
+	measure 'Market Scope' =
+			SWITCH(TRUE(),
+			    COUNTROWS('Latest ZIP Market') = 0, "No matching markets",
+			    HASONEVALUE('Latest ZIP Market'[ZIP Code]), "ZIP " & SELECTEDVALUE('Latest ZIP Market'[ZIP Code]),
+			    HASONEVALUE('Latest ZIP Market'[City]) && HASONEVALUE('Latest ZIP Market'[State]), SELECTEDVALUE('Latest ZIP Market'[City]) & ", " & SELECTEDVALUE('Latest ZIP Market'[State]),
+			    HASONEVALUE('Latest ZIP Market'[Metro]), COALESCE(SELECTEDVALUE('Latest ZIP Market'[Metro]), "Selected markets"),
+			    HASONEVALUE('Latest ZIP Market'[State]), SELECTEDVALUE('Latest ZIP Market'[State]),
+			    ISCROSSFILTERED('Latest ZIP Market'), "Selected markets",
+			    "United States")
+		displayFolder: Dashboard finish
+		lineageTag: 342153d7-45ed-50e7-9ae2-35c7481d4674
+
+	measure 'Trajectory Title' = "MARKET HISTORY  /  " & UPPER([Market Scope])
+		displayFolder: Dashboard finish
+		lineageTag: fa3a7474-2a70-5c99-bead-10460e79ea3e
+
+	measure 'Opportunity Title' = "ZIP COMPARISON  /  " & UPPER([Market Scope])
+		displayFolder: Dashboard finish
+		lineageTag: ba174c5b-ed0b-52d8-8a50-0140716c5ffc
+
+	measure 'Explorer Title' = "STATE POSITIONING  /  " & UPPER([Market Scope])
+		displayFolder: Dashboard finish
+		lineageTag: 07eeb99d-2e1c-5f07-be32-5606b91543e7
+
+	measure 'Rent Momentum Title' = "RENT GROWTH  /  " & UPPER([Market Scope])
+		displayFolder: Dashboard finish
+		lineageTag: f1eacad3-425f-5c9e-8484-82bc1a11d430
+
+	measure 'ZIP Detail Heading' =
+			IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]),
+			    "ZIP " & SELECTEDVALUE('Latest ZIP Market'[ZIP Code]) & "  |  " & SELECTEDVALUE('Latest ZIP Market'[City]) & ", " & SELECTEDVALUE('Latest ZIP Market'[State]) & "  |  " & FORMAT(MAX('Latest ZIP Market'[Month]), "mmm yyyy"),
+			    "Select one ZIP code to open its market profile")
+		displayFolder: Dashboard finish
+		lineageTag: 6e8f6cbc-596a-5782-96f7-facf28dec8ad
+
+	measure 'ZIP Home History Title' = "HOME VALUE HISTORY  /  " & IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), "ZIP " & SELECTEDVALUE('Latest ZIP Market'[ZIP Code]), "SELECT ONE ZIP")
+		displayFolder: Dashboard finish
+		lineageTag: bb40a9cd-da01-56c6-a905-3a57f8d8e3d4
+
+	measure 'ZIP Rent History Title' = "MONTHLY RENT HISTORY  /  " & IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), "ZIP " & SELECTEDVALUE('Latest ZIP Market'[ZIP Code]), "SELECT ONE ZIP")
+		displayFolder: Dashboard finish
+		lineageTag: ae37f7a6-898b-5428-a4fd-3b3320707a6d
+
+	measure 'ZIP Home Value' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Home Value])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: f7d42a37-a73e-57b6-8823-857800967d28
+
+	measure 'ZIP Monthly Rent' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Monthly Rent])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: cc39a97e-04b8-5078-aaf1-d79ed3530492
+
+	measure 'ZIP Rent-to-Value' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Gross Rent-to-Value])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Dashboard finish
+		lineageTag: 20a51c77-f21a-5795-8f92-46d222b7ca05
+
+	measure 'ZIP Home Growth' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Home Value YoY])
+		formatString: +0.00%;-0.00%;0.00%
+		displayFolder: Dashboard finish
+		lineageTag: dd70ecf7-bba8-5254-bdf6-b0f231263c85
+
+	measure 'ZIP Rent Growth' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Rent YoY])
+		formatString: +0.00%;-0.00%;0.00%
+		displayFolder: Dashboard finish
+		lineageTag: c38987de-7ebc-53df-95a3-ffd09c401737
+
+	measure 'Home Growth Colour' = SWITCH(TRUE(), ISBLANK([Median Home Value YoY]), "#F3EEE4", [Median Home Value YoY] < 0, "#E2A39A", [Median Home Value YoY] > 0, "#A4C6B0", "#F3EEE4")
+		displayFolder: Dashboard finish
+		lineageTag: 06d7d671-1ff3-500b-b8ee-ef0a6e2efb83
+
+	measure 'Rent Growth Colour' = SWITCH(TRUE(), ISBLANK([Median Rent YoY]), "#F3EEE4", [Median Rent YoY] < 0, "#E2A39A", [Median Rent YoY] > 0, "#A4C6B0", "#F3EEE4")
+		displayFolder: Dashboard finish
+		lineageTag: a92a2941-2959-5da3-9729-665cc71549f5
+
+	measure 'ZIP History Status' =
+			IF(NOT HASONEVALUE('Latest ZIP Market'[ZIP Code]), "Choose a ZIP above. Cards and charts will then show that market only.",
+			    IF(SELECTEDVALUE('Latest ZIP Market'[has_yoy_comparison]), "YoY available: compared with the same month one year earlier.", "YoY unavailable: no matched observation for the same month one year earlier. A dash does not mean 0% growth."))
+		displayFolder: Dashboard finish
+		lineageTag: 87e7d964-a6b9-57e6-ae96-22caad2ed3f0
+
+	measure 'Benchmark Home Value' =
+			VAR Zip = SELECTEDVALUE('Latest ZIP Market'[ZIP Code])
+			VAR Metro = SELECTEDVALUE('Latest ZIP Market'[Metro])
+			VAR State = SELECTEDVALUE('Latest ZIP Market'[State])
+			VAR SelectedScope = SELECTEDVALUE('Comparison Scope'[Scope])
+			VAR Peers = FILTER(ALLNOBLANKROW('Latest ZIP Market'),
+			    SWITCH(SelectedScope,
+			        "Selected ZIP", 'Latest ZIP Market'[ZIP Code] = Zip,
+			        "Metro", NOT ISBLANK(Metro) && 'Latest ZIP Market'[Metro] = Metro,
+			        "State", 'Latest ZIP Market'[State] = State,
+			        "National", TRUE(), FALSE()))
+			RETURN IF(NOT ISBLANK(Zip), MEDIANX(Peers, 'Latest ZIP Market'[Home Value]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: a4362409-a51b-557a-b39d-a0b7627b9ce5
+
+	measure 'Benchmark Monthly Rent' =
+			VAR Zip = SELECTEDVALUE('Latest ZIP Market'[ZIP Code])
+			VAR Metro = SELECTEDVALUE('Latest ZIP Market'[Metro])
+			VAR State = SELECTEDVALUE('Latest ZIP Market'[State])
+			VAR SelectedScope = SELECTEDVALUE('Comparison Scope'[Scope])
+			VAR Peers = FILTER(ALLNOBLANKROW('Latest ZIP Market'),
+			    SWITCH(SelectedScope,
+			        "Selected ZIP", 'Latest ZIP Market'[ZIP Code] = Zip,
+			        "Metro", NOT ISBLANK(Metro) && 'Latest ZIP Market'[Metro] = Metro,
+			        "State", 'Latest ZIP Market'[State] = State,
+			        "National", TRUE(), FALSE()))
+			RETURN IF(NOT ISBLANK(Zip), MEDIANX(Peers, 'Latest ZIP Market'[Monthly Rent]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: 412368f6-02bd-54b2-b238-995e995e6caa
+
+	measure 'Benchmark Rent-to-Value' =
+			VAR Zip = SELECTEDVALUE('Latest ZIP Market'[ZIP Code])
+			VAR Metro = SELECTEDVALUE('Latest ZIP Market'[Metro])
+			VAR State = SELECTEDVALUE('Latest ZIP Market'[State])
+			VAR SelectedScope = SELECTEDVALUE('Comparison Scope'[Scope])
+			VAR Peers = FILTER(ALLNOBLANKROW('Latest ZIP Market'),
+			    SWITCH(SelectedScope,
+			        "Selected ZIP", 'Latest ZIP Market'[ZIP Code] = Zip,
+			        "Metro", NOT ISBLANK(Metro) && 'Latest ZIP Market'[Metro] = Metro,
+			        "State", 'Latest ZIP Market'[State] = State,
+			        "National", TRUE(), FALSE()))
+			RETURN IF(NOT ISBLANK(Zip), MEDIANX(Peers, 'Latest ZIP Market'[Gross Yield %]) / 100)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Dashboard finish
+		lineageTag: eedd4615-2698-5355-913c-2c3e17484ac9
+
+	measure 'Benchmark ZIP Count' =
+			VAR Zip = SELECTEDVALUE('Latest ZIP Market'[ZIP Code])
+			VAR Metro = SELECTEDVALUE('Latest ZIP Market'[Metro])
+			VAR State = SELECTEDVALUE('Latest ZIP Market'[State])
+			VAR SelectedScope = SELECTEDVALUE('Comparison Scope'[Scope])
+			VAR Peers = FILTER(ALLNOBLANKROW('Latest ZIP Market'),
+			    SWITCH(SelectedScope,
+			        "Selected ZIP", 'Latest ZIP Market'[ZIP Code] = Zip,
+			        "Metro", NOT ISBLANK(Metro) && 'Latest ZIP Market'[Metro] = Metro,
+			        "State", 'Latest ZIP Market'[State] = State,
+			        "National", TRUE(), FALSE()))
+			RETURN IF(NOT ISBLANK(Zip), COUNTROWS(Peers))
+		formatString: #,0
+		displayFolder: Dashboard finish
+		lineageTag: 3e11dfd5-b134-58eb-bb58-52fef9b7fa7b
+
+	measure 'Benchmark Location' =
+			IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), SWITCH(SELECTEDVALUE('Comparison Scope'[Scope]),
+			    "Selected ZIP", SELECTEDVALUE('Latest ZIP Market'[ZIP Code]),
+			    "Metro", COALESCE(SELECTEDVALUE('Latest ZIP Market'[Metro]), "Not available"),
+			    "State", SELECTEDVALUE('Latest ZIP Market'[State]),
+			    "National", "United States"))
+		displayFolder: Dashboard finish
+		lineageTag: 8dcd5f97-007b-5906-b990-9e5da81e6524
+
+	measure 'Home Value vs State' =
+			VAR SelectedState = SELECTEDVALUE('Latest ZIP Market'[State])
+			VAR StateMedian = MEDIANX(FILTER(ALLNOBLANKROW('Latest ZIP Market'), 'Latest ZIP Market'[State] = SelectedState), 'Latest ZIP Market'[Home Value])
+			RETURN IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), DIVIDE(SELECTEDVALUE('Latest ZIP Market'[Home Value]) - StateMedian, StateMedian))
+		formatString: +0.00%;-0.00%;0.00%
+		displayFolder: Dashboard finish
+		lineageTag: d4aa8451-7581-5a61-9b2f-ff9e62cd09d5
+
+	measure 'Rent vs State' =
+			VAR SelectedState = SELECTEDVALUE('Latest ZIP Market'[State])
+			VAR StateMedian = MEDIANX(FILTER(ALLNOBLANKROW('Latest ZIP Market'), 'Latest ZIP Market'[State] = SelectedState), 'Latest ZIP Market'[Monthly Rent])
+			RETURN IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), DIVIDE(SELECTEDVALUE('Latest ZIP Market'[Monthly Rent]) - StateMedian, StateMedian))
+		formatString: +0.00%;-0.00%;0.00%
+		displayFolder: Dashboard finish
+		lineageTag: 0ae59d64-3e5d-59e5-a3da-8fb1ae1f0f3f
+
+	measure 'ZIP Position Readout' =
+			IF(NOT HASONEVALUE('Latest ZIP Market'[ZIP Code]), "Choose one ZIP to compare its value and rent with the state median.",
+			    "Home value: " & FORMAT([Home Value vs State], "+0.0%;-0.0%;0.0%") & " vs state" & UNICHAR(10) &
+			    "Monthly rent: " & FORMAT([Rent vs State], "+0.0%;-0.0%;0.0%") & " vs state")
+		displayFolder: Dashboard finish
+		lineageTag: d71da436-6915-5b9c-a509-5163de0e4684

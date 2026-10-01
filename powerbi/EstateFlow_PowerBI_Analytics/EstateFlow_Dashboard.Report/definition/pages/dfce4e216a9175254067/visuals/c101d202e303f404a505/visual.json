@@ -1,13 +1,76 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c101d202e303f404a505",
-  "position": { "x": 48, "y": 824, "z": 30, "height": 200, "width": 360, "tabOrder": 30 },
+  "position": {
+    "x": 48,
+    "y": 826.2,
+    "z": 30,
+    "height": 185,
+    "width": 360,
+    "tabOrder": 30
+  },
   "visual": {
     "visualType": "cardVisual",
-    "query": { "queryState": { "Data": { "projections": [
-      { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Home Value YoY" } }, "queryRef": "Latest ZIP Market.Median Home Value YoY", "nativeQueryRef": "Median Home Value YoY" }
-    ] } } },
-    "objects": { "value": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } } } }] },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Home Value YoY"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Home Value YoY",
+              "nativeQueryRef": "Median Home Value YoY"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Latest ZIP Market"
+                        }
+                      },
+                      "Property": "Home Growth Colour"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

@@ -4,7 +4,7 @@ EstateFlow is a housing-market analytics project that takes Zillow home-value an
 
 ## Dashboard structure
 
-The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains three established observed-data pages: a national housing-market overview, a state and metro market explorer, and a plain-English guide. A fourth, separately labelled forecast experiment page is authored and awaits a PostgreSQL publish, Power BI refresh, and Desktop review.
+The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The final database rebuild, Power BI refresh, and Desktop review are release gates.
 
 ## Dashboard previews
 
@@ -28,7 +28,7 @@ The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` conta
 - How much of the current market has a valid year-over-year comparison?
 - For eligible ZIPs, what do a simple baseline and validated trend model project at 3, 6 and 12 months, and how wide were their historically calibrated prediction bands?
 
-The dashboard's latest shared Zillow observation is **July 2026**. In that snapshot, the joined model covers **8,499 ZIP codes**. The national medians shown are **$389,083** for home value, **$1,818** for monthly rent, and **5.59%** gross rent-to-value. These are descriptive market measures, not property-level investment returns.
+The checked-in Zillow source vintage runs through **August 2026**. Its latest common snapshot has **8,399 ZIP codes** with at least one observed measure. The raw-source national medians are **$386,222** for home value, **$1,823** for monthly rent, and **5.62%** gross rent-to-value. These are descriptive market measures, not property-level investment returns. The live Power BI figures update after the PostgreSQL pipeline and Desktop refresh.
 
 ## How the data moves
 
@@ -38,7 +38,7 @@ flowchart LR
     B --> C[PostgreSQL staging]
     C --> D[ZIP-month model]
     D --> E[Market metric marts]
-    E --> F[Power BI overview + explorer + guide]
+    E --> F[Power BI overview + explorer + ZIP detail + forecast + guide]
 ```
 
 ## What is implemented
@@ -63,15 +63,16 @@ flowchart LR
 - **National Housing Market:** state, metro, and city filters; headline market medians; home-value and rent history; year-over-year indicators; coverage; and a ZIP-level market-opportunities table.
 - **Market Explorer:** state and metro filters; a growth-versus-yield state comparison; rent-momentum ranking; and a metro comparison table.
 - **How to Read the Dashboard:** explains the measures, suggests a practical reading order, and makes the coverage and investment-screening limitations explicit.
-- **Forecast Experiment:** ZIP-level home-value and rent-index projections and empirical 80%/95% bounds, explicitly separated from the observed pages; pending Power BI Desktop validation.
+- **ZIP Detail:** historical home value and rent, growth, and comparison with state benchmarks for the selected ZIP.
+- **Forecast Experiment:** ZIP-level home-value and rent-index projections and empirical 80%/95% bounds, explicitly separated from the observed pages; pending a local Desktop refresh and visual check.
 - The editable Power BI Project (`.pbip`) and semantic-model/report definitions are in [`powerbi/EstateFlow_PowerBI_Analytics`](powerbi/EstateFlow_PowerBI_Analytics). Local Power BI cache and settings are intentionally excluded.
 
 ### Experimental forecasts
 
 - A separate, reproducible ZIP-index forecast experiment compares an unchanged-last-value benchmark with a damped log trend at 3-, 6-, and 12-month horizons.
-- It uses chronological selection, validation, calibration, and final-evaluation periods and reports empirical prediction-interval coverage. On the July 2026 snapshot, only the 12-month rent trend cleared the material-improvement threshold; home-value projections and shorter-horizon rent projections use the flat benchmark.
+- It uses chronological selection, validation, calibration, and final-evaluation periods and reports empirical prediction-interval coverage. On the July 2026 source snapshot, only the 12-month rent trend cleared the material-improvement threshold; home-value projections and shorter-horizon rent projections use the flat benchmark.
 - A separate **Forecast Experiment** Power BI page and import table are authored. Run the explicit database publish step and verify the page in Power BI Desktop before relying on it. A forecast is not an observed Zillow value, a property valuation, or net rental income. See the [forecast methodology and measured results](docs/forecast-methodology.md).
-- A September 2026 Zillow source-vintage check added August observations, but no July-origin 3-, 6- or 12-month projection has yet reached its target. The check documented material revisions to July values without updating the committed July snapshot or the observed dashboard.
+- A September 2026 Zillow source-vintage check added August observations, but those newer files are not part of this repository snapshot. Forecast accuracy remains retrospective and exploratory; future-origin projections have not reached their target months.
 
 ## Analytical model
 

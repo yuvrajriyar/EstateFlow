@@ -4,7 +4,7 @@ import pandas as pd
 
 
 file_path = Path(
-    "data/raw/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv"
+    "data/raw/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv.gz"
 )
 
 zhvi = pd.read_csv(

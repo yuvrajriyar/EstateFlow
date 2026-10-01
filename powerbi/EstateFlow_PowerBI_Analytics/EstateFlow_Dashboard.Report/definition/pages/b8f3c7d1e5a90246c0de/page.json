@@ -4,5 +4,42 @@
   "displayName": "Market Explorer",
   "displayOption": "FitToPage",
   "height": 1080,
-  "width": 1920
+  "width": 1920,
+  "visualInteractions": [
+    {
+      "source": "f203a304b405c506d607",
+      "target": "f202a303b404c505d606",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f207a308b409c510d611",
+      "target": "f202a303b404c505d606",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f207a308b409c510d611",
+      "target": "f203a304b405c506d607",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f205a306b407c508d609",
+      "target": "f202a303b404c505d606",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f205a306b407c508d609",
+      "target": "f203a304b405c506d607",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f206a307b408c509d610",
+      "target": "f202a303b404c505d606",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f206a307b408c509d610",
+      "target": "f203a304b405c506d607",
+      "type": "NoFilter"
+    }
+  ]
 }

@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 
 SOURCE_FILE = Path(
-    "data/raw/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv"
+    "data/raw/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv.gz"
 )
 
 CHUNK_SIZE = 500

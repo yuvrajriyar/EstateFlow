@@ -12,3 +12,13 @@ relationship AutoDetected_e4904a25-daf6-4e87-bff5-b49f6e468ce9
 	fromColumn: 'ZIP Monthly History'.region_id
 	toColumn: 'Latest ZIP Market'.region_id
 
+relationship de9fc613-bc4a-4553-963a-2d3d579228cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ZIP Forecasts'.'As-Of Month'
+	toColumn: LocalDateTable_dc8baba7-f3ee-466e-a59e-ae98375bc54d.Date
+
+
+relationship 8ba3a152-38ed-49c4-b293-c1fc27d87989
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ZIP Forecasts'.'Forecast Month'
+	toColumn: LocalDateTable_c1335c05-9767-40c2-bc63-743d6f7c7f8b.Date

@@ -1,18 +1,101 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "e101f202a303b404c505",
-  "position": { "x": 48, "y": 28, "z": 0, "height": 116, "width": 1824, "tabOrder": 0 },
+  "position": {
+    "x": 48,
+    "y": 82,
+    "width": 1824,
+    "height": 110,
+    "z": 20,
+    "tabOrder": 20
+  },
   "visual": {
     "visualType": "textbox",
-    "objects": { "general": [{ "properties": { "paragraphs": [
-      { "textRuns": [{ "value": "ESTATEFLOW  /  READER'S GUIDE", "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "11pt", "color": "#D8C398" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "How to Read the Dashboard", "textStyle": { "fontFamily": "Georgia", "fontSize": "30pt", "color": "#F3EEE4" } }], "horizontalTextAlignment": "left" },
-      { "textRuns": [{ "value": "A plain-English guide to the metrics, comparisons and investment-screening signals.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "11pt", "color": "#AAA49A" } }], "horizontalTextAlignment": "left" }
-    ] } }] },
-    "visualContainerObjects": { "padding": [{ "properties": {
-      "top": { "expr": { "Literal": { "Value": "0D" } } }, "bottom": { "expr": { "Literal": { "Value": "0D" } } },
-      "left": { "expr": { "Literal": { "Value": "0D" } } }, "right": { "expr": { "Literal": { "Value": "0D" } } }
-    } }] },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ESTATEFLOW  /  READER’S GUIDE",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#D8C398"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "From first glance to informed questions",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "29pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A guide to the five pages, the numbers and the limits of what they can tell you.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#F3EEE4"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

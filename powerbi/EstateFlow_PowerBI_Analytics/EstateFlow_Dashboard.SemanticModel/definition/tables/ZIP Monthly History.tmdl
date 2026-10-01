@@ -1,8 +1,7 @@
 table 'ZIP Monthly History'
 	lineageTag: c4e42b5a-bf22-4bf4-a0b6-6ddcd13fc877
-
 	measure 'Median Home Value Trend' =
-			
+
 			MEDIAN('ZIP Monthly History'[zhvi_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
 		displayFolder: Historical KPIs
@@ -11,7 +10,7 @@ table 'ZIP Monthly History'
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	measure 'Median Rent Trend' =
-			
+
 			MEDIAN('ZIP Monthly History'[zori_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
 		displayFolder: Historical KPIs
@@ -203,3 +202,17 @@ table 'ZIP Monthly History'
 
 	annotation PBI_ResultType = Table
 
+	measure 'Matched ZIPs in Month' = DISTINCTCOUNT('ZIP Monthly History'[zip_code])
+		formatString: #,0
+		displayFolder: Dashboard finish
+		lineageTag: 088dde4e-2d1b-5816-ba3d-8ef255d2f1bb
+
+	measure 'ZIP Home History' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Home Value Trend])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: 5b99848d-4a90-58e5-bb21-35f302b5e2c6
+
+	measure 'ZIP Rent History' = IF(HASONEVALUE('Latest ZIP Market'[ZIP Code]), [Median Rent Trend])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Dashboard finish
+		lineageTag: 60f3f9af-f255-53dd-9dc2-a7427772d60f

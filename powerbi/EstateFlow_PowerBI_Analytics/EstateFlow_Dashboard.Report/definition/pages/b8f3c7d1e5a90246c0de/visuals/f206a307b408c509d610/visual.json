@@ -1,60 +1,332 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f206a307b408c509d610",
-  "position": { "x": 1264, "y": 190, "z": 11, "height": 520, "width": 608, "tabOrder": 11 },
+  "position": {
+    "x": 1264,
+    "y": 239.75,
+    "z": 11,
+    "height": 481,
+    "width": 608,
+    "tabOrder": 11
+  },
   "visual": {
     "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Category": { "projections": [
-          { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "State" } }, "queryRef": "Latest ZIP Market.State", "nativeQueryRef": "State" }
-        ] },
-        "Y": { "projections": [
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Rent YoY" } }, "queryRef": "Latest ZIP Market.Median Rent YoY", "nativeQueryRef": "Median Rent YoY" }
-        ] },
-        "Tooltips": { "projections": [
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Gross Rent-to-Value" } }, "queryRef": "Latest ZIP Market.Median Gross Rent-to-Value", "nativeQueryRef": "Median Gross Rent-to-Value" },
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Home Value YoY" } }, "queryRef": "Latest ZIP Market.Median Home Value YoY", "nativeQueryRef": "Median Home Value YoY" },
-          { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Latest ZIP Count" } }, "queryRef": "Latest ZIP Market.Latest ZIP Count", "nativeQueryRef": "Latest ZIP Count" }
-        ] }
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "State"
+                }
+              },
+              "queryRef": "Latest ZIP Market.State",
+              "nativeQueryRef": "State",
+              "active": true
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Gross Rent-to-Value"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Gross Rent-to-Value",
+              "nativeQueryRef": "Median Gross Rent-to-Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Home Value YoY"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Home Value YoY",
+              "nativeQueryRef": "Median Home Value YoY"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Latest ZIP Count"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Latest ZIP Count",
+              "nativeQueryRef": "Latest ZIP Count"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Median Rent YoY"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Median Rent YoY",
+              "nativeQueryRef": "Median Rent YoY"
+            }
+          ]
+        }
       },
-      "sortDefinition": { "sort": [
-        { "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Median Rent YoY" } }, "direction": "Descending" }
-      ], "isDefaultSort": true }
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Latest ZIP Market"
+                  }
+                },
+                "Property": "Median Rent YoY"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
     },
     "objects": {
-      "categoryAxis": [{ "properties": {
-        "showAxisTitle": { "expr": { "Literal": { "Value": "false" } } },
-        "fontSize": { "expr": { "Literal": { "Value": "9D" } } }
-      } }],
-      "valueAxis": [{ "properties": {
-        "showAxisTitle": { "expr": { "Literal": { "Value": "true" } } },
-        "titleText": { "expr": { "Literal": { "Value": "'RENT GROWTH (YOY)'" } } },
-        "labelPrecision": { "expr": { "Literal": { "Value": "1L" } } },
-        "gridlineStyle": { "expr": { "Literal": { "Value": "'dotted'" } } }
-      } }],
-      "labels": [{ "properties": {
-        "show": { "expr": { "Literal": { "Value": "true" } } },
-        "labelPosition": { "expr": { "Literal": { "Value": "'OutsideEnd'" } } },
-        "labelPrecision": { "expr": { "Literal": { "Value": "1L" } } },
-        "fontSize": { "expr": { "Literal": { "Value": "9D" } } }
-      } }],
-      "subheader": [{ "properties": {
-        "show": { "expr": { "Literal": { "Value": "false" } } }
-      } }]
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'RENT GROWTH (YOY)'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "gridlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dotted'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subheader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
-      "title": [{ "properties": {
-        "show": { "expr": { "Literal": { "Value": "true" } } },
-        "text": { "expr": { "Literal": { "Value": "'RENT MOMENTUM  /  BY STATE'" } } },
-        "fontSize": { "expr": { "Literal": { "Value": "15D" } } }
-      } }],
-      "padding": [{ "properties": {
-        "top": { "expr": { "Literal": { "Value": "12D" } } },
-        "bottom": { "expr": { "Literal": { "Value": "12D" } } },
-        "left": { "expr": { "Literal": { "Value": "12D" } } },
-        "right": { "expr": { "Literal": { "Value": "12D" } } }
-      } }]
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Rent Momentum Title"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Median monthly rent change from one year earlier'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

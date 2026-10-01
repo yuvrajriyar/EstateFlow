@@ -1,21 +1,109 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "a102b203c304d405e506",
-  "position": { "x": 1372, "y": 48, "z": 11, "height": 80, "width": 232, "tabOrder": 11 },
+  "position": {
+    "x": 1372,
+    "y": 108.4,
+    "z": 11,
+    "height": 80,
+    "width": 232,
+    "tabOrder": 11
+  },
   "visual": {
     "visualType": "slicer",
-    "query": { "queryState": { "Values": { "projections": [
-      { "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Latest ZIP Market" } }, "Property": "Metro" } }, "queryRef": "Latest ZIP Market.Metro", "nativeQueryRef": "Metro" }
-    ] } } },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Latest ZIP Market"
+                    }
+                  },
+                  "Property": "Metro"
+                }
+              },
+              "queryRef": "Latest ZIP Market.Metro",
+              "nativeQueryRef": "Metro",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
     "objects": {
-      "data": [{ "properties": { "mode": { "expr": { "Literal": { "Value": "'Dropdown'" } } } } }],
-      "header": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "text": { "expr": { "Literal": { "Value": "'METRO'" } } } } }]
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'METRO'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
-      "padding": [{ "properties": {
-        "top": { "expr": { "Literal": { "Value": "8D" } } }, "bottom": { "expr": { "Literal": { "Value": "8D" } } },
-        "left": { "expr": { "Literal": { "Value": "8D" } } }, "right": { "expr": { "Literal": { "Value": "8D" } } }
-      } }]
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

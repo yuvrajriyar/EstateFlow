@@ -1,0 +1,20 @@
+table 'Comparison Scope'
+	lineageTag: 7168a8fe-55ad-5076-b039-d9c1fb7f8662
+
+	column Scope
+		dataType: string
+		lineageTag: f26bc923-0d77-4982-ac7d-d2d62ecb158d
+		summarizeBy: none
+		sourceColumn: [Scope]
+		sortByColumn: Order
+
+	column Order
+		dataType: int64
+		isHidden
+		lineageTag: 8a672e4b-8ad5-4508-9e22-97b915996d39
+		summarizeBy: none
+		sourceColumn: [Order]
+
+	partition 'Comparison Scope' = calculated
+		mode: import
+		source = DATATABLE("Scope", STRING, "Order", INTEGER, {{"Selected ZIP", 1}, {"Metro", 2}, {"State", 3}, {"National", 4}})

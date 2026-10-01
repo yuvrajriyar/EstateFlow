@@ -11,6 +11,20 @@ permissions:
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: estateflow_test
+          POSTGRES_PASSWORD: estateflow_test
+          POSTGRES_DB: estateflow_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U estateflow_test -d estateflow_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -24,5 +38,7 @@ jobs:
       - name: Install locked dependencies
         run: uv sync --locked
 
-      - name: Run unit tests
+      - name: Run unit and PostgreSQL quality-gate tests
+        env:
+          ESTATEFLOW_TEST_DSN: postgresql://estateflow_test:estateflow_test@localhost:5432/estateflow_test
         run: uv run --locked python -m unittest discover -s tests -v

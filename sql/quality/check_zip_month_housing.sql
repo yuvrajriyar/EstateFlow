@@ -39,3 +39,18 @@ FROM (
         month
     HAVING COUNT(*) > 1
 ) AS duplicates;
+
+-- Fail the pipeline on failed data checks. Diagnostic queries above remain readable.
+DO $quality$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM intermediate.zip_month_housing) THEN
+        RAISE EXCEPTION 'quality gate check_zip_month_housing: joined model is empty';
+    END IF;
+    IF EXISTS (SELECT 1 FROM intermediate.zip_month_housing WHERE zip_code IS NULL OR month IS NULL OR zhvi_usd IS NULL OR zori_usd IS NULL OR zhvi_usd <= 0 OR zori_usd <= 0) THEN
+        RAISE EXCEPTION 'quality gate check_zip_month_housing: missing or invalid joined values';
+    END IF;
+    IF EXISTS (SELECT 1 FROM intermediate.zip_month_housing GROUP BY zip_code, month HAVING COUNT(*) > 1) THEN
+        RAISE EXCEPTION 'quality gate check_zip_month_housing: duplicate ZIP-month keys';
+    END IF;
+END
+$quality$;
