@@ -58,20 +58,11 @@ The source join contained **455,832 observed ZIP-month pairs across 8,508 ZIPs**
 
 The 12-month ZHVI trend achieved only a small earlier validation improvement and did not pass the 10% material-gain rule. In the final retrospective period its median error was 2.33%, versus 2.30% for the flat benchmark. The 12-month ZORI candidate did pass the rule and outperformed the benchmark in the final retrospective period. A developer inspected these historical outcomes while refining this experiment, so the final period is **not** a pristine external, prospective validation set. Treat the comparison as exploratory and rerun on future source vintages.
 
-### September 2026 source-vintage check
+### Current source vintage
 
-On 28 September, we downloaded the ZIP ZHVI and ZORI files that Zillow last modified on 16 September. Both now end at **2026-08-31**. Run the uncommitted, newer files without replacing the repository's July snapshot:
+The July results above are a recorded historical experiment. For the currently verified dataset and rerun evaluation, see [current-data.md](current-data.md). Use `uv run python src/estateflow/update_sources.py`, then rebuild PostgreSQL and republish forecasts before refreshing Power BI. The downloader records source URLs, retrieval dates, modification dates, and hashes. Zillow revises historical values and coverage, so rerunning an evaluation on a newer file does not constitute prospective validation of forecasts from the older file.
 
-```bash
-uv run python src/estateflow/run_forecast.py --source raw \
-  --zori-path /path/to/new/Zip_zori_uc_sfrcondomfr_sm_month.csv \
-  --zhvi-path /path/to/new/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv \
-  --output-dir data/processed/forecast_new_vintage
-```
-
-The new join has **462,410 observed ZIP-month pairs across 8,424 ZIPs** and produces **31,566 projections for 5,261 eligible ZIPs**. Model choice is unchanged. In the new file's *retrospective* evaluation, median errors are 0.65%, 1.18% and 2.24% for 3-, 6- and 12-month ZHVI, and 1.46%, 1.86% and 1.74% for ZORI. The 12-month ZORI flat baseline has 2.41% median error. These are **re-estimates on a revised historical series**, not prospective validation of July projections: the July 3-month forecast targets October 2026, the 6-month forecast January 2027, and the 12-month forecast July 2027.
-
-Historical values also moved. Among **7,799 ZIPs** with joined July values in both vintages, every July value differed at the stored precision; the median absolute revision was **1.064% for ZHVI** and **2.051% for ZORI**. The original joined July set had 8,499 ZIPs; the newer vintage has 7,865 for July and 8,421 for August. This change in coverage and values means the next analysis should retain source-vintage metadata and assess prospective errors only when the target months arrive. The newer files and outputs were kept outside the Git-tracked source snapshot for this check.
+The following example uses the recorded July source vintage.
 
 For example, ZIP **01002 (Amherst, MA)** had a July 2026 observed ZORI index of about **$2,430 per month**. The experiment's July 2027 ZORI point estimate is **$2,487**, with a pooled empirical 80% band of **$2,373–$2,607** and a 95% band of **$2,302–$2,687**. This illustrates how to read a forecast row; it is not a rent quote for a particular home. The point estimate × 12, approximately **$29,845**, is only an annualised gross-rent *run rate at that future monthly level*.
 

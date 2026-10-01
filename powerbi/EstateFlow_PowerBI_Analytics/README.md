@@ -23,4 +23,4 @@ The PBIP model references `marts.zip_month_market_metrics`, `marts.latest_zip_ma
 
 ## Data recency
 
-The screenshots in `../../docs/images/` are historical July 2026 previews. The checked-in source now runs through August 2026. Rebuild the database and refresh Power BI before relying on displayed values.
+The screenshots in `../../docs/images/` are historical July 2026 previews. Check `../../docs/current-data.md` and `../../data/raw/source_manifest.json` for the verified source vintage. Rebuild the database, republish forecasts, and refresh Power BI before relying on displayed values.

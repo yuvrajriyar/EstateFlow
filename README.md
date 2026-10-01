@@ -28,7 +28,17 @@ The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` conta
 - How much of the current market has a valid year-over-year comparison?
 - For eligible ZIPs, what do a simple baseline and validated trend model project at 3, 6 and 12 months, and how wide were their historically calibrated prediction bands?
 
-The checked-in Zillow source vintage runs through **August 2026**. Its latest common snapshot has **8,399 ZIP codes** with at least one observed measure. The raw-source national medians are **$386,222** for home value, **$1,823** for monthly rent, and **5.62%** gross rent-to-value. These are descriptive market measures, not property-level investment returns. The live Power BI figures update after the PostgreSQL pipeline and Desktop refresh.
+The published source vintage and coverage are recorded in [the data summary](docs/current-data.md). A local refresh records its newer source vintage in `data/raw/source_manifest.json`. Dashboard screenshots remain labelled as July 2026 previews. The Power BI figures update after the PostgreSQL pipeline, forecast publication, and Desktop refresh.
+
+### Refresh to the latest available Zillow data
+
+```bash
+uv run python src/estateflow/update_sources.py &&
+uv run python src/estateflow/run_pipeline.py &&
+uv run python src/estateflow/run_forecast.py --publish-to-db
+```
+
+The downloader checks the ZIP schema, positive values, dates, and matching source months before replacing either file. It refuses an older vintage and records source URLs, retrieval dates, and hashes in `data/raw/source_manifest.json`. Zillow can revise historical values, so each refresh is a new source vintage. After the full pipeline and forecasts pass, commit the updated source files and manifest to publish that snapshot on GitHub. Update the data summary from the actual pipeline output and refresh Desktop screenshots before claiming they show the new vintage.
 
 ## How the data moves
 

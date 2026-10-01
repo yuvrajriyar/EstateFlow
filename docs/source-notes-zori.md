@@ -1,5 +1,7 @@
 # Zillow ZORI Source Notes
 
+
+This profile describes the historical July 2026 snapshot. See [current-data.md](current-data.md) and `data/raw/source_manifest.json` for the refreshed source vintage.
 ## Dataset selected
 
 * Dataset: Zillow Observed Rent Index, All Homes
