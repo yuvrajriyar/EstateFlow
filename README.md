@@ -11,6 +11,10 @@ EstateFlow is a housing-market analytics project that takes Zillow home-value an
 
 See the [October 2026 release notes](https://github.com/yuvrajriyar/EstateFlow/releases/tag/v1.0.0). Release month is October; the embedded Zillow observation month is August 2026. The PBIX SHA-256 is `ef79447f257286eabb99378f6bf239fceb36dae34fd9feed33bf61d4ab0d85f5`.
 
+## Project handbook
+
+Read the [complete project handbook](docs/handbook.md) for architecture, metric definitions, forecasting methodology, operating procedures, troubleshooting, development decisions and future work. It documents the October 2026 release with August observations and distinguishes shipped features from planned improvements.
+
 ## Dashboard structure
 
 The editable Power BI Project under `powerbi/EstateFlow_PowerBI_Analytics` contains five pages: a national housing-market overview, a state and metro market explorer, ZIP detail, a separately labelled forecast experiment, and a plain-English guide. The August database rebuild and forecast publication passed all pipeline quality gates locally. All five pages were refreshed and visually reviewed on 1 October 2026; the author confirmed navigation, Clear filters, and launcher-based startup reset. The same reviewed snapshot also powers the public [web dashboard](https://yuvrajriyar.vercel.app/projects/estateflow/dashboard). The web version is a React/Next.js application, with [source code and static data exports](https://github.com/yuvrajriyar/portfolio-website/tree/main/app/projects/estateflow/dashboard) in the portfolio repository. It is separate from Power BI Service.
@@ -185,8 +189,8 @@ tests/                      Automated project tests
 
 ## Next steps
 
-- Publish an interactive online report and verify visitor access. The five-page Desktop report, filter controls, and launcher reset have passed local acceptance.
-- Prepare the final handbook and release package.
+- Maintain the shipped web dashboard and downloadable Power BI release as new verified source vintages arrive.
+- Keep the [project handbook](docs/handbook.md), source provenance and release documentation aligned with measured results.
 - Re-evaluate forecasts when new Zillow observations arrive; CI already runs unit and PostgreSQL quality-gate tests.
 - Assess whether carefully selected FRED or Census measures improve the market context without overstating causal explanations.
 
