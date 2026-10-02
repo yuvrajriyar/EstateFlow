@@ -13,7 +13,7 @@ See the [October 2026 release notes](https://github.com/yuvrajriyar/EstateFlow/r
 
 ## Project handbook
 
-Read the [complete project handbook](docs/handbook.md) for architecture, metric definitions, forecasting methodology, operating procedures, troubleshooting, development decisions and future work. It documents the October 2026 release with August observations and distinguishes shipped features from planned improvements.
+Read the [complete project handbook](docs/handbook.md) or [download the 21-page PDF](docs/EstateFlow-Handbook.pdf) for architecture, metric definitions, forecasting methodology, operating procedures, troubleshooting, development decisions and future work. It documents the October 2026 release with August observations and distinguishes shipped features from planned improvements.
 
 ## Dashboard structure
 
@@ -119,6 +119,10 @@ The core gross rent-to-value calculation is:
 ```
 
 Gross rent-to-value is a first-pass screening measure. It is not net yield, cash flow, or a complete investment return, and does not account for financing, vacancy, taxes, insurance, maintenance, management, or transaction costs. Zillow indices are modelled estimates, and coverage differs across geographies and months. Missing values are not estimated in the mart; the report surfaces year-over-year coverage so comparisons can be read in context.
+
+## Interactive web dashboard
+
+The public React/Next.js dashboard provides the same five analytical views as the report, with geography filters, ZIP search, historical charts, experimental forecasts, comparison tables and CSV export. The browser version opens without a Power BI account. Its code and snapshot exports live in [the portfolio repository](https://github.com/yuvrajriyar/portfolio-website/tree/main/app/projects/estateflow/dashboard), while this repository owns the Python/SQL pipeline, tests, source vintage and editable Power BI project.
 
 ## Technology
 

@@ -7,6 +7,8 @@ Built by Yuvraj Riyar | Release edition 1.0 | 1 October 2026
 
 Observation snapshot: 31 August 2026. Publication month: October 2026.
 
+[Download the formatted 21-page PDF](EstateFlow-Handbook.pdf) · [Open the web dashboard](https://yuvrajriyar.vercel.app/projects/estateflow/dashboard)
+
 This handbook documents the shipped portfolio release, not a real-time housing service. It combines inspected repository code, the author's successful database and Desktop run logs, and public-web acceptance checks. Historical recollections are identified separately. Future work is not presented as implemented.
 
 ## 01 | Executive brief
